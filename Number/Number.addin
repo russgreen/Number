@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Number</Name>
+    <Assembly>Number.dll</Assembly>
+    <ClientId>5b4841c4-e5de-4bf1-b9e5-31f05cb509ce</ClientId>
+    <FullClassName>Number.App</FullClassName>
+    <VendorId>ARBG</VendorId>
+		<VisibilityMode>NotVisibleInFamily</VisibilityMode>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+  </AddIn>
+</RevitAddIns>
