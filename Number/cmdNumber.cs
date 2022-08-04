@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -38,6 +39,8 @@ public class cmdNumber : IExternalCommand
             _uidoc = _uiapp.ActiveUIDocument;
             _sel = _uidoc.Selection;
             _doc = _uidoc.Document;
+
+            App.revitDocument = _doc; //the revit doc ref used throughout all UI elments
 
             var frm = new FormNumber(commandData);
             if(frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)

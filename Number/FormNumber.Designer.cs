@@ -59,7 +59,7 @@
             // 
             // txtParamName
             // 
-            this.txtParamName.Location = new System.Drawing.Point(12, 182);
+            this.txtParamName.Location = new System.Drawing.Point(10, 182);
             this.txtParamName.Name = "txtParamName";
             this.txtParamName.Size = new System.Drawing.Size(210, 20);
             this.txtParamName.TabIndex = 26;
