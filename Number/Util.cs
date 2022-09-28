@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using Nice3point.Revit.Extensions;
 
 namespace Number;
 
@@ -36,36 +39,38 @@ public class Util
         return a.ToString("0.##");
     }
     
-    public static List<string> GetCategoriesInActiveView()
+    public static List<Category> GetCategoriesInActiveView()
     {
         // select all elements in the active view
-        var allInView = new FilteredElementCollector(App.revitDocument, App.revitDocument.ActiveView.Id);
+        var allInView = new FilteredElementCollector(
+            App.revitDocument,
+            App.revitDocument.ActiveView.Id);
+
         allInView.WhereElementIsNotElementType();
 
-        // use LINQ to collect the category names of all elements whilst ensuring that category is not null  
-        var categoryNames = from elem in allInView
-                            where elem.Category is object
-                            select elem.Category.Name;
+        //get distinct categories of elements in the active view
+        var categories = allInView
+                            .ToElements()
+                            .Select(x => x.Category)
+                            .Distinct(new CategoryComparer())
+                            .Where(x => x != null)
+                            .Where(x => x.Name.ToLower().Contains("<room separation>") == false)
+                            .Where(x => x.Name.ToLower().Contains("sheets") == false)
+                            .Where(x => x.Name.ToLower().Contains("schedule graphics") == false)
+                            .Where(x => x.Name.ToLower().Contains("lines") == false)
+                            .Where(x => x.Name.ToLower().Contains("legends") == false)
+                            .Where(x => x.Name.ToLower().Contains("title blocks") == false)
+                            .Where(x => x.Name.ToLower().Contains("tags") == false)
+                            .Where(x => x.Name.ToLower().Contains("dimensions") == false)
+                            .Where(x => x.Name.ToLower().Contains("text") == false)
+                            .Where(x => x.Name.ToLower().Contains("cameras") == false)
+                            .Where(x => x.Name.ToLower().Contains("elevations") == false)
+                            .Where(x => x.Name.ToLower().Contains("sections") == false)
+                            .Where(x => x.Name.ToLower().Contains("views") == false)
+                            .OrderBy(x => x.Name)
+                            .ToList();
 
-        // strip out duplicates and order the list of category names  
-        categoryNames = categoryNames.Distinct().OrderBy(catName => catName);
-
-        var categoryNames1 = from name in categoryNames
-                             where name.ToLower().Contains("<room separation>") == false &
-                             name.ToLower().Contains("sheets") == false &
-                             name.ToLower().Contains("schedule graphics") == false &
-                             name.ToLower().Contains("lines") == false &
-                             name.ToLower().Contains("title blocks") == false &
-                             name.ToLower().Contains("tags") == false &
-                             name.ToLower().Contains("dimensions") == false &
-                             name.ToLower().Contains("text") == false &
-                             name.ToLower().Contains("cameras") == false &
-                             name.ToLower().Contains("elevations") == false &
-                             name.ToLower().Contains("sections") == false &
-                             name.ToLower().Contains("views") == false
-                             select name;
-
-        return categoryNames1.ToList<string>();
+        return categories.ToList();
     }
 
     public static List<FamilyInstance> GetFamilyInstancesByCategoryInActiveView(string categoryName)
@@ -87,6 +92,18 @@ public class Util
     public static List<string> GetInstanceParametersByCategoryInActiveView(string categoryName)
     {
         var familyInstances = GetFamilyInstancesByCategoryInActiveView(categoryName);
+
+        //var elements = App.revitDocument
+        //    .GetElements(App.revitDocument.ActiveView.Id)
+        //    .ToElements();
+
+        //var elements1 = App.revitDocument
+        //    .GetElements(App.revitDocument.ActiveView.Id)
+        //    .ToElements()
+        //    .Where(x => x.Category.Name == categoryName);
+
+        //var instances = App.revitDocument
+        //    .GetInstances(App.revitDocument.ActiveView.Id);
 
         // get the instance parameters of the family instances
         var instanceParameters = new List<string>();
@@ -136,6 +153,59 @@ public class Util
             }
         }
 
-        return instanceParameters.Distinct().OrderBy(parameterName => parameterName).ToList();
+        return instanceParameters
+            .Distinct()
+            .OrderBy(parameterName => parameterName)
+            .ToList();
     }
+
+   public static List<string> GetCategoryParameters(ElementId catID)
+    {
+        if (catID == null) return null;
+
+        var parameters = new List<string>();
+
+        using (Transaction tr = new Transaction(App.revitDocument, "make_schedule"))
+        {
+            tr.Start();
+            // Create schedule
+            ViewSchedule vs = ViewSchedule.CreateSchedule(App.revitDocument, catID);
+            App.revitDocument.Regenerate();
+
+            // Find schedulable fields
+            foreach (SchedulableField sField in vs.Definition.GetSchedulableFields())
+            {
+                if (sField.FieldType != ScheduleFieldType.ElementType) continue;
+                parameters.Add(sField.GetName(App.revitDocument));
+            }
+            tr.RollBack();
+        }
+        return parameters;
+    }
+
+    public static List<ElementId> GetCategoryParameters(Category cat)
+    {
+        if (cat == null) return null;
+
+        List<ElementId> paramIds = new List<ElementId>();
+
+        using (Transaction tr = new Transaction(App.revitDocument, "make_schedule"))
+        {
+            tr.Start();
+            // Create schedule
+            ViewSchedule vs = ViewSchedule.CreateSchedule(App.revitDocument, cat.Id);
+            App.revitDocument.Regenerate();
+
+            // Find schedulable fields
+            foreach (SchedulableField sField in vs.Definition.GetSchedulableFields())
+            {
+                if (sField.FieldType != ScheduleFieldType.ElementType) continue;
+                paramIds.Add(sField.ParameterId);
+            }
+            tr.RollBack();
+        }
+        return paramIds;
+    }
+
+
 }

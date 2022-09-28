@@ -80,11 +80,11 @@
 
   <ItemGroup>
     <PackageReference Include="Syncfusion.SfDataGrid.WinForms" Version="20.1.0.47" />
-		<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*"/>
-		<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*"/>
-		<PackageReference Include="Nice3point.Revit.Api.AdWindows" Version="$(RevitVersion).*"/>
-		<!--<PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*"/>-->
-	</ItemGroup>
+	<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*" />
+	<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*" />
+	<PackageReference Include="Nice3point.Revit.Api.AdWindows" Version="$(RevitVersion).*" />
+	<PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*"/>
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -97,6 +97,10 @@
     <None Update="Number.addin">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 	<!-- Build debug manifest at build time -->
