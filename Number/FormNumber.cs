@@ -27,31 +27,35 @@ public partial class FormNumber : System.Windows.Forms.Form
 
         _document = CommandData.Application.ActiveUIDocument.Document;
 
-        btnNumber.Enabled = false;
+        buttonNumber.Enabled = false;
         LoadCategoriesList();
     }
 
-    private void cboCategories_SelectedIndexChanged(object sender, EventArgs e)
+    private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
     {
-        chkPickCat.Checked = true;
+        checkBoxPickCat.Checked = true;
         LoadInstanceParameters();
     }
 
-    private void cboParameters_SelectedIndexChanged(object sender, EventArgs e)
+    private void comboBoxParameters_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            chkDupMark.Text = "Surpress Duplicate Mark Values";
-            if (cboParameters.SelectedItem.ToString().ToLower() == "mark")
+            checkBoxDupMark.Text = "Surpress Duplicate Mark Values";
+            if(comboBoxParameters.SelectedItem != null)
             {
-                chkDupMark.Checked = true;
-                chkDupMark.Enabled = true;
+                if (comboBoxParameters.SelectedItem.ToString().ToLower() == "mark")
+                {
+                    checkBoxDupMark.Checked = true;
+                    checkBoxDupMark.Enabled = true;
+                }
+                else
+                {
+                    checkBoxDupMark.Checked = false;
+                    checkBoxDupMark.Enabled = false;
+                }
             }
-            else
-            {
-                chkDupMark.Checked = false;
-                chkDupMark.Enabled = false;
-            }
+
         }
         catch (Exception ex)
         {
@@ -59,35 +63,35 @@ public partial class FormNumber : System.Windows.Forms.Form
         }
     }
 
-    private void chkPickCat_CheckedChanged(object sender, EventArgs e)
+    private void checkBoxPickCat_CheckedChanged(object sender, EventArgs e)
     {
         ConfigureControls();
     }
 
-    private void txtParamName_TextChanged(object sender, EventArgs e)
+    private void textBoxParamName_TextChanged(object sender, EventArgs e)
     {
         HandleParamValTextChange();
     }
 
-    private void btnNumber_Click(object sender, EventArgs e)
+    private void buttonNumber_Click(object sender, EventArgs e)
     {
-        if (cboParameters.Visible == true)
+        if (comboBoxParameters.Visible == true)
         {
-            parameterName = cboParameters.SelectedItem.ToString();
+            parameterName = comboBoxParameters.SelectedItem.ToString();
         }
         else
         {
-            parameterName = txtParamName.Text;
+            parameterName = textBoxParamName.Text;
         }
 
-        categoryName = cboCategories.SelectedItem.ToString();
-        numberFrom = (int)Math.Round(nudStartFrom.Value);
-        prefix = txtPrefix.Text;
-        suffix = txtSuffix.Text;
+        categoryName = ((Category)comboBoxCategories.SelectedItem).Name;
+        numberFrom = (int)Math.Round(numericUpDownStartFrom.Value);
+        prefix = textBoxPrefix.Text;
+        suffix = textBoxSuffix.Text;
 
-        if (chkPickCat.Checked == false)
+        if (checkBoxPickCat.Checked == false)
         {
-            parameterName = txtParamName.Text;
+            parameterName = textBoxParamName.Text;
         }
 
         this.DialogResult = DialogResult.OK;
@@ -98,11 +102,11 @@ public partial class FormNumber : System.Windows.Forms.Form
     {
         try
         {
-            this.cboCategories.DataSource = Util.GetCategoriesInActiveView(); 
-            this.cboCategories.DisplayMember = "Name";
-            this.cboCategories.ValueMember = "ID";
+            this.comboBoxCategories.DataSource = Util.GetCategoriesInActiveView(); 
+            this.comboBoxCategories.DisplayMember = "Name";
+            this.comboBoxCategories.ValueMember = "ID";
 
-            this.cboCategories.SelectedIndex = 0;
+            this.comboBoxCategories.SelectedIndex = 0;
         }
         catch (Exception ex)
         {
@@ -115,54 +119,50 @@ public partial class FormNumber : System.Windows.Forms.Form
 
     private void LoadInstanceParameters()
     {
-        btnNumber.Enabled = false;
-        txtParamName.Visible = false;
+        buttonNumber.Enabled = false;
+        textBoxParamName.Visible = false;
         lblParamSelect.Text = "Available parameters";
-        chkPickCat.Enabled = true;
+        checkBoxPickCat.Enabled = true;
 
-        cboParameters.Visible = true;
-        cboParameters.SelectedItem = null;
-        cboParameters.SelectedValue = null;
-        cboParameters.Items.Clear();
+        comboBoxParameters.Visible = true;
+        comboBoxParameters.SelectedItem = null;
+        comboBoxParameters.SelectedValue = null;
+        comboBoxParameters.Items.Clear();
 
-        //GetInstanceParametersByCategoryInActiveView
-        //var parameters = Util.GetCategoryParameters((Category)this.cboCategories.SelectedItem);
-
-        //foreach (var paramName in Util.GetCategoryParameters(((Category)cboCategories.SelectedItem).Id))
         foreach (var paramName in Util.GetInstanceParametersByCategoryInActiveView(
-            ((Category)cboCategories.SelectedItem).Name))
+            ((Category)comboBoxCategories.SelectedItem).Id))
         {
-            cboParameters.Items.Add(paramName);
+            comboBoxParameters.Items.Add(paramName);
         }
                 
-        if (cboParameters.Items.Count > 0)
+        if (comboBoxParameters.Items.Count > 0)
         {
-            cboParameters.SelectedIndex = 0;
-            btnNumber.Enabled = true;
+            comboBoxParameters.SelectedIndex = 0;
+            buttonNumber.Enabled = true;
         }
         else
         {
-            chkPickCat.Checked = false;
-            chkPickCat.Enabled = false;
+            checkBoxPickCat.Checked = false;
+            checkBoxPickCat.Enabled = false;
             ConfigureControls();
         }
     }
     
     private void ConfigureControls()
     {
-        if (chkPickCat.Checked == true)
+        if (checkBoxPickCat.Checked == true)
         {
-            if (cboParameters.Items.Count > 0)
+            if (comboBoxParameters.Items.Count > 0)
             {
-                cboParameters.Visible = true;
-                txtParamName.Visible = false;
+                comboBoxParameters.Visible = true;
+                textBoxParamName.Visible = false;
                 lblParamSelect.Text = "Available parameters";
             }
             else
             {
                 SetParamValText();
-                cboParameters.Visible = false;
-                txtParamName.Visible = true;
+                comboBoxParameters.Visible = false;
+                textBoxParamName.Visible = true;
                 lblParamSelect.Text = "Type parameter name to use";
                 HandleParamValTextChange();
             }
@@ -170,8 +170,8 @@ public partial class FormNumber : System.Windows.Forms.Form
         else
         {
             SetParamValText();
-            cboParameters.Visible = false;
-            txtParamName.Visible = true;
+            comboBoxParameters.Visible = false;
+            textBoxParamName.Visible = true;
             lblParamSelect.Text = "Type parameter name to use";
             HandleParamValTextChange();
         }
@@ -179,48 +179,48 @@ public partial class FormNumber : System.Windows.Forms.Form
 
     private void SetParamValText()
     {
-        switch (cboCategories.SelectedItem.ToString().ToLower() ?? "")
+        switch (comboBoxCategories.SelectedItem.ToString().ToLower() ?? "")
         {
             case var @case when @case == "viewports":
-                txtParamName.Text = "Detail Number";
+                textBoxParamName.Text = "Detail Number";
                 break;
 
             case var case1 when case1 == "grids":
-                txtParamName.Text = "Name";
-                chkDupMark.Text = "Surpress Duplicate Name Values";
+                textBoxParamName.Text = "Name";
+                checkBoxDupMark.Text = "Surpress Duplicate Name Values";
                 break;
 
             case var case2 when case2 == "rvt links":
-                txtParamName.Text = "Name";
-                chkDupMark.Text = "Surpress Duplicate Name Values";
+                textBoxParamName.Text = "Name";
+                checkBoxDupMark.Text = "Surpress Duplicate Name Values";
                 break;
 
             default:
-                txtParamName.Text = "Mark";
-                chkDupMark.Text = "Surpress Duplicate Mark Values";
+                textBoxParamName.Text = "Mark";
+                checkBoxDupMark.Text = "Surpress Duplicate Mark Values";
                 break;
         }
     }
 
     private void HandleParamValTextChange()
     {
-        if ((txtParamName.Text ?? "") != (string.Empty ?? ""))
+        if ((textBoxParamName.Text ?? "") != (string.Empty ?? ""))
         {
-            btnNumber.Enabled = true;
-            if (txtParamName.Text.ToLower() == "mark" | txtParamName.Text.ToLower() == "name")
+            buttonNumber.Enabled = true;
+            if (textBoxParamName.Text.ToLower() == "mark" | textBoxParamName.Text.ToLower() == "name")
             {
-                chkDupMark.Checked = true;
-                chkDupMark.Enabled = true;
+                checkBoxDupMark.Checked = true;
+                checkBoxDupMark.Enabled = true;
             }
             else
             {
-                chkDupMark.Checked = false;
-                chkDupMark.Enabled = false;
+                checkBoxDupMark.Checked = false;
+                checkBoxDupMark.Enabled = false;
             }
         }
         else
         {
-            btnNumber.Enabled = false;
+            buttonNumber.Enabled = false;
         }
     }
 

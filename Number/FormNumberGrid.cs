@@ -1,9 +1,11 @@
-﻿using Autodesk.Revit.UI;
+﻿using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 using System;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Number;
-public partial class FormNumberGrid : Form
+public partial class FormNumberGrid : System.Windows.Forms.Form
 {
     public FormNumberGrid(ExternalCommandData CommandData)
     {
@@ -23,10 +25,11 @@ public partial class FormNumberGrid : Form
     {
         try
         {
-            foreach (var catName in Util.GetCategoriesInActiveView())
-                comboBoxCategories.Items.Add(catName);
+            this.comboBoxCategories.DataSource = Util.GetCategoriesInActiveView();
+            this.comboBoxCategories.DisplayMember = "Name";
+            this.comboBoxCategories.ValueMember = "ID";
 
-            comboBoxCategories.SelectedIndex = 0;
+            this.comboBoxCategories.SelectedIndex = 0;
         }
         catch (Exception)
         {
@@ -45,8 +48,11 @@ public partial class FormNumberGrid : Form
         comboBoxParameters.SelectedValue = null;
         comboBoxParameters.Items.Clear();
 
-        foreach (var paramName in Util.GetInstanceParametersByCategoryInActiveView(comboBoxCategories.SelectedItem.ToString()))
+        foreach (var paramName in Util.GetInstanceParametersByCategoryInActiveView(
+            ((Category)comboBoxCategories.SelectedItem).Id))
+        {
             comboBoxParameters.Items.Add(paramName);
+        }
 
         if (comboBoxParameters.Items.Count > 0)
         {

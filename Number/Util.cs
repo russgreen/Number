@@ -12,8 +12,7 @@ using Nice3point.Revit.Extensions;
 namespace Number;
 
 public class Util
-{
-
+{    
     public static Parameter FindParameterByName(ref Element element, string Definition)
     {
         Parameter foundParameter = null;
@@ -89,31 +88,20 @@ public class Util
         return familyInstances.ToList<FamilyInstance>();
     }
 
-    public static List<string> GetInstanceParametersByCategoryInActiveView(string categoryName)
+    public static List<string> GetInstanceParametersByCategoryInActiveView(ElementId catID)
     {
-        var familyInstances = GetFamilyInstancesByCategoryInActiveView(categoryName);
-
-        //var elements = App.revitDocument
-        //    .GetElements(App.revitDocument.ActiveView.Id)
-        //    .ToElements();
-
-        //var elements1 = App.revitDocument
-        //    .GetElements(App.revitDocument.ActiveView.Id)
-        //    .ToElements()
-        //    .Where(x => x.Category.Name == categoryName);
-
-        //var instances = App.revitDocument
-        //    .GetInstances(App.revitDocument.ActiveView.Id);
+        var instances = App.revitDocument
+            .GetInstances(App.revitDocument.ActiveView.Id, new ElementCategoryFilter(catID));
 
         // get the instance parameters of the family instances
         var instanceParameters = new List<string>();
 
-        foreach (FamilyInstance instance in familyInstances)
+        foreach (var instance in instances)
         {
             foreach (Parameter parameter in instance.Parameters)
             {
                 //if parameter.IsReadonly is not false
-                
+
                 if (parameter.IsReadOnly == false)
                 {
                     switch (parameter.Definition.Name.ToLower() ?? "")
@@ -149,7 +137,7 @@ public class Util
                             instanceParameters.Add(parameter.Definition.Name);
                             break;
                     }
-                }                    
+                }
             }
         }
 
@@ -158,54 +146,4 @@ public class Util
             .OrderBy(parameterName => parameterName)
             .ToList();
     }
-
-   public static List<string> GetCategoryParameters(ElementId catID)
-    {
-        if (catID == null) return null;
-
-        var parameters = new List<string>();
-
-        using (Transaction tr = new Transaction(App.revitDocument, "make_schedule"))
-        {
-            tr.Start();
-            // Create schedule
-            ViewSchedule vs = ViewSchedule.CreateSchedule(App.revitDocument, catID);
-            App.revitDocument.Regenerate();
-
-            // Find schedulable fields
-            foreach (SchedulableField sField in vs.Definition.GetSchedulableFields())
-            {
-                if (sField.FieldType != ScheduleFieldType.ElementType) continue;
-                parameters.Add(sField.GetName(App.revitDocument));
-            }
-            tr.RollBack();
-        }
-        return parameters;
-    }
-
-    public static List<ElementId> GetCategoryParameters(Category cat)
-    {
-        if (cat == null) return null;
-
-        List<ElementId> paramIds = new List<ElementId>();
-
-        using (Transaction tr = new Transaction(App.revitDocument, "make_schedule"))
-        {
-            tr.Start();
-            // Create schedule
-            ViewSchedule vs = ViewSchedule.CreateSchedule(App.revitDocument, cat.Id);
-            App.revitDocument.Regenerate();
-
-            // Find schedulable fields
-            foreach (SchedulableField sField in vs.Definition.GetSchedulableFields())
-            {
-                if (sField.FieldType != ScheduleFieldType.ElementType) continue;
-                paramIds.Add(sField.ParameterId);
-            }
-            tr.RollBack();
-        }
-        return paramIds;
-    }
-
-
 }

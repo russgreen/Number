@@ -51,9 +51,9 @@ public class cmdNumber : IExternalCommand
                     frm.suffix,
                     frm.parameterName,
                     frm.categoryName,
-                    frm.chkIsolate.Checked,
-                    frm.chkColour.Checked,
-                    frm.chkDupMark.Checked);
+                    frm.checkBoxIsolate.Checked,
+                    frm.checkBoxColour.Checked,
+                    frm.checkBoxDupMark.Checked);
 
             // Return Success
             return Result.Succeeded;
