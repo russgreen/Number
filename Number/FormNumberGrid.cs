@@ -1,5 +1,7 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using Syncfusion.Data.Extensions;
+using Syncfusion.WinForms.DataGrid;
 using System;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -19,7 +21,8 @@ public partial class FormNumberGrid : System.Windows.Forms.Form
     {
         checkBoxSelectParameter.Checked = true;
         LoadInstanceParameters();
-    }  
+        LoadFamilyInstances();
+    }
 
     private void LoadCategories()
     {
@@ -65,7 +68,16 @@ public partial class FormNumberGrid : System.Windows.Forms.Form
             checkBoxSelectParameter.Enabled = false;
             ConfigureControls();
         }
+    }
 
+    private void LoadFamilyInstances()
+    {
+        this.sfDataGrid1.Columns.Clear();
+        this.sfDataGrid1.Columns.Add(new GridTextColumn() { MappingName = "Id", HeaderText = "ID", AllowEditing = false });
+        this.sfDataGrid1.Columns.Add(new GridTextColumn() { MappingName = "Name", HeaderText = "Name",  AllowEditing = false, MinimumWidth = 400 });
+
+        var instances = Util.GetInstancesByCategoryInActiveView(((Category)comboBoxCategories.SelectedItem).Id);
+        //this.sfDataGrid1.DataSource = Util.GetInstancesByCategoryInActiveView(((Category)comboBoxCategories.SelectedItem).Id);
     }
 
     private void ConfigureControls()

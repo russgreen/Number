@@ -88,6 +88,16 @@ public class Util
         return familyInstances.ToList<FamilyInstance>();
     }
 
+    public static List<Element> GetInstancesByCategoryInActiveView(ElementId catID)
+    {
+        var instances = App.revitDocument
+            .GetInstances(App.revitDocument.ActiveView.Id, new ElementCategoryFilter(catID));
+
+        return instances
+            .OrderBy(x => x.Id.IntegerValue)
+            .ToList();
+    }
+
     public static List<string> GetInstanceParametersByCategoryInActiveView(ElementId catID)
     {
         var instances = App.revitDocument

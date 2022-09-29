@@ -79,7 +79,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.SfDataGrid.WinForms" Version="20.1.0.47" />
+	<PackageReference Include="Syncfusion.SfDataGrid.WinForms" Version="20.1.0.47" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.AdWindows" Version="$(RevitVersion).*" />
