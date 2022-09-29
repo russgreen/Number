@@ -72,32 +72,6 @@ public class Util
         return categories.ToList();
     }
 
-    public static List<FamilyInstance> GetFamilyInstancesByCategoryInActiveView(string categoryName)
-    {
-        // get family instances in the active view
-        var allInView = new FilteredElementCollector(App.revitDocument, App.revitDocument.ActiveView.Id);
-        var faminstFilter = new ElementClassFilter(typeof(FamilyInstance));
-        allInView.WherePasses(faminstFilter);
-
-        // get the family instances in the active view that are of the specified category
-        var faminstInView = from instance in allInView
-                            where (instance.Category.Name ?? "") == (categoryName ?? "")
-                            select instance;
-        var familyInstances = faminstInView.Cast<FamilyInstance>().ToList();
-
-        return familyInstances.ToList<FamilyInstance>();
-    }
-
-    public static List<Element> GetInstancesByCategoryInActiveView(ElementId catID)
-    {
-        var instances = App.revitDocument
-            .GetInstances(App.revitDocument.ActiveView.Id, new ElementCategoryFilter(catID));
-
-        return instances
-            .OrderBy(x => x.Id.IntegerValue)
-            .ToList();
-    }
-
     public static List<string> GetInstanceParametersByCategoryInActiveView(ElementId catID)
     {
         var instances = App.revitDocument

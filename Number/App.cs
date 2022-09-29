@@ -45,11 +45,6 @@ class App : IExternalApplication
         pbNumber.ToolTip = "Number items in order by clicking on them in turn. Esc to finish.";
         pbNumber.LargeImage = PngImageSource("Number.Images.Number32.png");
 
-        //PushButtonData pbDataNumberGrid = new PushButtonData("NumberGrid", "Number Grid", Assembly.GetExecutingAssembly().Location, "Number.cmdNumberGrid");
-        //PushButton pbNumberGrid = (PushButton)panel.AddItem(pbDataNumberGrid);
-        //pbNumberGrid.ToolTip = "Number items in in a datagrid.";
-        //pbNumberGrid.LargeImage = PngImageSource("Number.Images.Number32.png");
-
         PushButtonData pbDataNumberText = new PushButtonData("NumberText", "Number text", Assembly.GetExecutingAssembly().Location, "Number.cmdNumberText");
         PushButton pbNumberText  = (PushButton)panel.AddItem(pbDataNumberText);
         pbNumberText.ToolTip = "Number text strings in order by clicking on them in turn. Esc to finish.";
