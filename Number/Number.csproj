@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-	  <!--<Configurations>2018;2019;2020;2021;2022;2023</Configurations>-->
-	  <Configurations>Debug R18;Debug R19;Debug R20;Debug R21;Debug R22;Debug R23</Configurations>
-	  <Configurations>$(Configurations);Release R18;Release R19;Release R20;Release R21;Release R22;Release R23</Configurations>
+	  <!--<Configurations>2019;2020;2021;2022;2023</Configurations>-->
+	  <Configurations>Debug R19;Debug R20;Debug R21;Debug R22;Debug R23</Configurations>
+	  <Configurations>$(Configurations);Release R19;Release R20;Release R21;Release R22;Release R23</Configurations>
     <Platforms>x64</Platforms>
     <Description>(re)number elements and text strings in Revit</Description>
     <Copyright>Copyright © Russell Green</Copyright>
-    <Version>2.2.0</Version>
+    <Version>2.3.0</Version>
     <UseWindowsForms>true</UseWindowsForms>
 	<LangVersion>latest</LangVersion>
     <!--<ImplicitUsings>true</ImplicitUsings>-->
@@ -23,11 +23,6 @@
 		<DebugType>none</DebugType>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="$(Configuration.Contains('R18'))">
-		<TargetFramework>net461</TargetFramework>
-		<RevitVersion>2018</RevitVersion>
-		<DefineConstants>$(DefineConstants);REVIT2018;PREFORGETYPEID</DefineConstants>
-	</PropertyGroup>
 	<PropertyGroup Condition="$(Configuration.Contains('R19'))">
 		<TargetFramework>net47</TargetFramework>
 		<RevitVersion>2019</RevitVersion>
@@ -82,7 +77,7 @@
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.AdWindows" Version="$(RevitVersion).*" />
-	<PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*"/>
+	<PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*" />
   </ItemGroup>
 
   <ItemGroup>
@@ -94,7 +89,7 @@
 
   <ItemGroup>
     <None Update="Number.addin">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

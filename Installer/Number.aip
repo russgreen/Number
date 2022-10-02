@@ -11,10 +11,10 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="Number2.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Russell Green"/>
-    <ROW Property="ProductCode" Value="1033:{C0050F47-20EB-433E-B121-9DC5EB6E7496} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{FFEC44D2-66D6-4B58-9D8E-46F3D4B73377} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Number"/>
-    <ROW Property="ProductVersion" Value="2.2"/>
+    <ROW Property="ProductVersion" Value="2.3"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{F04F085F-5478-481E-B50C-946A19EEF10F}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -37,158 +37,64 @@
     <ROW Directory="Number_3_Dir" Directory_Parent="__2_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_4_Dir" Directory_Parent="__3_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_5_Dir" Directory_Parent="__4_Dir" DefaultDir="Number"/>
-    <ROW Directory="Number_Dir" Directory_Parent="__5_Dir" DefaultDir="Number"/>
     <ROW Directory="Revit_Dir" Directory_Parent="Autodesk_Dir" DefaultDir="Revit"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="__1_Dir" Directory_Parent="Addins_Dir" DefaultDir="2020"/>
     <ROW Directory="__2_Dir" Directory_Parent="Addins_Dir" DefaultDir="2021"/>
     <ROW Directory="__3_Dir" Directory_Parent="Addins_Dir" DefaultDir="2022"/>
     <ROW Directory="__4_Dir" Directory_Parent="Addins_Dir" DefaultDir="2023"/>
-    <ROW Directory="__5_Dir" Directory_Parent="Addins_Dir" DefaultDir="2018"/>
     <ROW Directory="__Dir" Directory_Parent="Addins_Dir" DefaultDir="2019"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{6F959207-42EB-49FA-AEB8-85858FF0FC12}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="ApplicationPlugins" ComponentId="{F65DFF13-4CBB-4DF8-A690-D2B245B8E0FD}" Directory_="ApplicationPlugins_Dir" Attributes="0"/>
+    <ROW Component="JetBrains.Annotations.dll" ComponentId="{4ABA9537-607B-4A3D-8A40-4A42369AD4C9}" Directory_="Number_1_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll"/>
+    <ROW Component="JetBrains.Annotations.dll_1" ComponentId="{C788019F-A8C0-4C0A-83EB-2CFE981BD2B9}" Directory_="Number_2_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_1"/>
+    <ROW Component="JetBrains.Annotations.dll_2" ComponentId="{A8A15C82-E8E0-4B00-85A5-90FBF81795B0}" Directory_="Number_3_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_2"/>
+    <ROW Component="JetBrains.Annotations.dll_3" ComponentId="{9680B3C2-0399-49B6-A96F-8BFD1A287867}" Directory_="Number_4_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_3"/>
+    <ROW Component="JetBrains.Annotations.dll_4" ComponentId="{566F9B2C-6FD3-4087-9451-FAB17DDE0286}" Directory_="Number_5_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_4"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll" ComponentId="{E49C75BA-5A38-4086-89A4-CF65577853C8}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll_1" ComponentId="{A3679CB9-DFC0-4400-A06E-9380F96BED0E}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_1"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll_2" ComponentId="{C27A6AEB-CB85-48CB-863D-39567A9772A6}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_2"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll_3" ComponentId="{03B49B4A-9CAF-4A4A-A2B3-23F781FD5608}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_3"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll_4" ComponentId="{DB7FCEB1-221C-42D8-89F5-DF62275BCEA7}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_4"/>
     <ROW Component="Number.addin" ComponentId="{70A7528D-B9EF-4ECF-9BB1-E28AC9508181}" Directory_="__Dir" Attributes="0" KeyPath="Number.addin_1" Type="0"/>
     <ROW Component="Number.addin_1" ComponentId="{B91014FF-2527-4913-8DA1-AAC9CAF664E8}" Directory_="__1_Dir" Attributes="0" KeyPath="Number.addin_2" Type="0"/>
     <ROW Component="Number.addin_2" ComponentId="{3B751914-B93B-4EF9-874D-0AA8A874E2BE}" Directory_="__2_Dir" Attributes="0" KeyPath="Number.addin_3" Type="0"/>
     <ROW Component="Number.addin_3" ComponentId="{3FA39415-5BDF-411B-A01E-E166A4AAD85E}" Directory_="__3_Dir" Attributes="0" KeyPath="Number.addin_4" Type="0"/>
     <ROW Component="Number.addin_4" ComponentId="{1F017CE0-AC00-4F4F-B0F6-48D4600E67B7}" Directory_="__4_Dir" Attributes="0" KeyPath="Number.addin_5" Type="0"/>
-    <ROW Component="Number.dll" ComponentId="{F5414582-3237-4B66-8F65-BF4D25CDE435}" Directory_="Number_Dir" Attributes="256" KeyPath="Number.dll"/>
     <ROW Component="Number.dll_10" ComponentId="{D16291D9-3EF2-48CF-9146-31F0D4548031}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Number.dll_10"/>
     <ROW Component="Number.dll_6" ComponentId="{F67DEAFF-9648-4CB9-BC96-4E322E0130C2}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Number.dll_6"/>
     <ROW Component="Number.dll_7" ComponentId="{E77D3131-5E9B-4AE6-89B6-0CFB77F9A40D}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Number.dll_7"/>
     <ROW Component="Number.dll_8" ComponentId="{3434938D-1D41-41C7-80EA-AD14DA4DC1C1}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Number.dll_8"/>
     <ROW Component="Number.dll_9" ComponentId="{D6D142EE-EC02-47C8-83E4-C0B2B974189B}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Number.dll_9"/>
     <ROW Component="ProductInformation" ComponentId="{87BBA69F-E1FB-466B-AFDE-E160676B203D}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
-    <ROW Component="Syncfusion.Core.WinForms.dll" ComponentId="{CB5A2EE3-8208-4A0C-A16B-B4197FD9E2B3}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.Core.WinForms.dll"/>
-    <ROW Component="Syncfusion.Core.WinForms.dll_10" ComponentId="{9FA58F34-2395-49EB-B826-77C60B638749}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.Core.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.Core.WinForms.dll_6" ComponentId="{68E518F1-7A35-46FA-9C77-D891EC7B9647}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.Core.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.Core.WinForms.dll_7" ComponentId="{B5D83042-3468-4516-9C3D-18EC4974F305}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.Core.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.Core.WinForms.dll_8" ComponentId="{38D1E00C-1212-4D06-83DF-FE444E29AC4B}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.Core.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.Core.WinForms.dll_9" ComponentId="{F6C1359E-2D1C-4A04-828F-0233E1AFA41A}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.Core.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.Data.WinForms.dll" ComponentId="{3CB51F6D-7C00-46C3-A6F5-4B8E4B5D4858}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.Data.WinForms.dll"/>
-    <ROW Component="Syncfusion.Data.WinForms.dll_10" ComponentId="{5A3D92B6-E36A-4205-AF5D-587674FBDCD1}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.Data.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.Data.WinForms.dll_6" ComponentId="{F1A5E88E-3DE5-43C1-AFAF-D6666F023780}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.Data.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.Data.WinForms.dll_7" ComponentId="{8A48B55B-F9F9-4951-83BC-2222DE32CD83}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.Data.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.Data.WinForms.dll_8" ComponentId="{2E1852E5-C90B-48EE-B601-AAE75BCADF2F}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.Data.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.Data.WinForms.dll_9" ComponentId="{D33AB44D-A206-4605-8F03-433AB914DC0F}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.Data.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.DataSource.WinForms.dll" ComponentId="{F5AC49C8-4B75-4E26-B5E1-ECB667C6BC66}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.DataSource.WinForms.dll"/>
-    <ROW Component="Syncfusion.DataSource.WinForms.dll_10" ComponentId="{A4315D28-C7A2-4F52-8818-7291BDFA0A41}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.DataSource.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.DataSource.WinForms.dll_6" ComponentId="{E0884608-3C0C-4FA4-88AF-5774734BD04F}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.DataSource.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.DataSource.WinForms.dll_7" ComponentId="{8F47077C-DF3C-4FE2-AC42-B16923E56367}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.DataSource.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.DataSource.WinForms.dll_8" ComponentId="{9B1EAA76-E3B1-4128-ACEA-277747022F73}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.DataSource.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.DataSource.WinForms.dll_9" ComponentId="{51E4706E-D865-46FF-A424-4E80993595CB}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.DataSource.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.GridCommon.WinForms.dll" ComponentId="{36ACD7E0-635A-4480-85FD-6D0CB1753786}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.GridCommon.WinForms.dll"/>
-    <ROW Component="Syncfusion.GridCommon.WinForms.dll_10" ComponentId="{2325779F-4DFC-4955-BB28-F40C5F703C91}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.GridCommon.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.GridCommon.WinForms.dll_6" ComponentId="{5DA2014F-7ECA-459D-B1F8-8C1D855860D6}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.GridCommon.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.GridCommon.WinForms.dll_7" ComponentId="{6A5BC4F6-08D0-48A6-B6B8-CAE6EC4EF941}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.GridCommon.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.GridCommon.WinForms.dll_8" ComponentId="{42F9A7C0-BAE5-4523-9F4C-45DE146596B0}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.GridCommon.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.GridCommon.WinForms.dll_9" ComponentId="{BBECAB15-4859-480B-B240-5F9F29BCDAFD}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.GridCommon.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.Licensing.dll" ComponentId="{7FD7F2E4-D431-4421-8569-E703A7DC89DF}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll"/>
-    <ROW Component="Syncfusion.Licensing.dll_10" ComponentId="{1B39E6EC-30B3-47D1-84F7-03A25B6DB0F4}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_10"/>
-    <ROW Component="Syncfusion.Licensing.dll_6" ComponentId="{9C5B34A6-E6D5-46F4-B2BA-B93B70F51F06}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_6"/>
-    <ROW Component="Syncfusion.Licensing.dll_7" ComponentId="{A7EB9A28-0297-4B3C-A27D-5EDC8BD67EBC}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_7"/>
-    <ROW Component="Syncfusion.Licensing.dll_8" ComponentId="{116B7FDB-CEB7-4D26-B14D-C1FCB14400F6}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_8"/>
-    <ROW Component="Syncfusion.Licensing.dll_9" ComponentId="{3D08D66A-DD0E-4D7D-99C6-5779150D8828}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_9"/>
-    <ROW Component="Syncfusion.SfDataGrid.WinForms.dll" ComponentId="{ED96BC2E-CAF7-46B8-B8FE-BA5599A8B73F}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.SfDataGrid.WinForms.dll"/>
-    <ROW Component="Syncfusion.SfDataGrid.WinForms.dll_10" ComponentId="{953D7A86-6DCC-4613-8C58-385C92A44A7C}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.SfDataGrid.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.SfDataGrid.WinForms.dll_6" ComponentId="{B5B6D2DD-3D9B-4A5B-AFF2-A4720FDBAC04}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.SfDataGrid.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.SfDataGrid.WinForms.dll_7" ComponentId="{1FD52A9A-3C1B-4B91-8D41-389BFDC1DF1F}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.SfDataGrid.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.SfDataGrid.WinForms.dll_8" ComponentId="{CC2786B2-BA43-4556-993A-E666D60A629F}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.SfDataGrid.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.SfDataGrid.WinForms.dll_9" ComponentId="{7AC037B6-28A8-4269-BF8C-56AB2948E98C}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.SfDataGrid.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.SfInput.WinForms.dll" ComponentId="{EFBCD1F9-9133-4326-B14F-594FC112F24D}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WinForms.dll"/>
-    <ROW Component="Syncfusion.SfInput.WinForms.dll_10" ComponentId="{B5161F35-FC84-46F4-A163-DE35E9EE196E}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.SfInput.WinForms.dll_6" ComponentId="{C7FD0CBB-3321-46CB-A9DB-B5616F3315DE}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.SfInput.WinForms.dll_7" ComponentId="{94C94C95-1AC3-45F1-A437-5A4A129ED4C0}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.SfInput.WinForms.dll_8" ComponentId="{D6463120-E56F-44D5-8FBA-5EE7DF8B6E8D}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.SfInput.WinForms.dll_9" ComponentId="{4962C99C-3F1A-4D9E-B36C-A5A2F58618E8}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.SfListView.WinForms.dll" ComponentId="{B6300C08-4E5C-4BE2-87F7-E71F7713A2CD}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.SfListView.WinForms.dll"/>
-    <ROW Component="Syncfusion.SfListView.WinForms.dll_10" ComponentId="{6F0859E7-ABF3-4A2F-9138-7DAD4D840AA2}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.SfListView.WinForms.dll_10"/>
-    <ROW Component="Syncfusion.SfListView.WinForms.dll_6" ComponentId="{A853B1A3-A9B1-4FAC-A2A9-9942179697A0}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.SfListView.WinForms.dll_6"/>
-    <ROW Component="Syncfusion.SfListView.WinForms.dll_7" ComponentId="{3088EF21-BEE8-4BBB-AD13-BA3F511BADC4}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.SfListView.WinForms.dll_7"/>
-    <ROW Component="Syncfusion.SfListView.WinForms.dll_8" ComponentId="{30BBB5BE-D67D-42DB-8FA5-7811355C0B3F}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.SfListView.WinForms.dll_8"/>
-    <ROW Component="Syncfusion.SfListView.WinForms.dll_9" ComponentId="{B35854DD-9829-4A94-8B86-70C6F0631852}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.SfListView.WinForms.dll_9"/>
-    <ROW Component="Syncfusion.Shared.Base.dll" ComponentId="{00753010-A8A2-44EB-B386-6A8413CCB249}" Directory_="Number_Dir" Attributes="0" KeyPath="Syncfusion.Shared.Base.dll"/>
-    <ROW Component="Syncfusion.Shared.Base.dll_10" ComponentId="{B1D040ED-2D42-4A51-AF1F-9D76002B587E}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.Shared.Base.dll_10"/>
-    <ROW Component="Syncfusion.Shared.Base.dll_6" ComponentId="{DF68E342-EAFD-45F7-BEF7-A781AD24F003}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Syncfusion.Shared.Base.dll_6"/>
-    <ROW Component="Syncfusion.Shared.Base.dll_7" ComponentId="{CEB073AD-016E-44A6-B1F1-D6F357014A99}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.Shared.Base.dll_7"/>
-    <ROW Component="Syncfusion.Shared.Base.dll_8" ComponentId="{080CFC06-5548-4F3C-BC13-AE354B1D6E15}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.Shared.Base.dll_8"/>
-    <ROW Component="Syncfusion.Shared.Base.dll_9" ComponentId="{90870FA0-3D7B-4436-89C4-D468FA970B7A}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.Shared.Base.dll_9"/>
-    <ROW Component="Warnings.addin" ComponentId="{9967F537-7FDC-4CB8-90B4-ACE463252BE7}" Directory_="__5_Dir" Attributes="0" KeyPath="Number.addin" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="Number.addin" Component_="Warnings.addin" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Number.addin" SelfReg="false"/>
-    <ROW File="Number.addin_1" Component_="Number.addin" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Number.addin" SelfReg="false"/>
-    <ROW File="Number.addin_2" Component_="Number.addin_1" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Number.addin" SelfReg="false"/>
-    <ROW File="Number.addin_3" Component_="Number.addin_2" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Number.addin" SelfReg="false"/>
-    <ROW File="Number.addin_4" Component_="Number.addin_3" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Number.addin" SelfReg="false"/>
-    <ROW File="Number.addin_5" Component_="Number.addin_4" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Number.addin" SelfReg="false"/>
-    <ROW File="Number.dll" Component_="Number.dll" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Number.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Core.WinForms.dll" Component_="Syncfusion.Core.WinForms.dll" FileName="SYNCFU~1.DLL|Syncfusion.Core.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.Core.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Data.WinForms.dll" Component_="Syncfusion.Data.WinForms.dll" FileName="SYNCFU~2.DLL|Syncfusion.Data.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.Data.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.DataSource.WinForms.dll" Component_="Syncfusion.DataSource.WinForms.dll" FileName="SYNCFU~3.DLL|Syncfusion.DataSource.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.DataSource.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.GridCommon.WinForms.dll" Component_="Syncfusion.GridCommon.WinForms.dll" FileName="SYNCFU~4.DLL|Syncfusion.GridCommon.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.GridCommon.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Licensing.dll" Component_="Syncfusion.Licensing.dll" FileName="SYNCFU~5.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.Licensing.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfDataGrid.WinForms.dll" Component_="Syncfusion.SfDataGrid.WinForms.dll" FileName="SYNCFU~6.DLL|Syncfusion.SfDataGrid.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.SfDataGrid.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfInput.WinForms.dll" Component_="Syncfusion.SfInput.WinForms.dll" FileName="SYNCFU~7.DLL|Syncfusion.SfInput.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.SfInput.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfListView.WinForms.dll" Component_="Syncfusion.SfListView.WinForms.dll" FileName="SYNCFU~8.DLL|Syncfusion.SfListView.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.SfListView.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Shared.Base.dll" Component_="Syncfusion.Shared.Base.dll" FileName="SYNCFU~9.DLL|Syncfusion.Shared.Base.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R18\Syncfusion.Shared.Base.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.DataSource.WinForms.dll_6" Component_="Syncfusion.DataSource.WinForms.dll_6" FileName="SYNCFU~1.DLL|Syncfusion.DataSource.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.DataSource.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.GridCommon.WinForms.dll_6" Component_="Syncfusion.GridCommon.WinForms.dll_6" FileName="SYNCFU~2.DLL|Syncfusion.GridCommon.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.GridCommon.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Licensing.dll_6" Component_="Syncfusion.Licensing.dll_6" FileName="SYNCFU~3.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.Licensing.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfDataGrid.WinForms.dll_6" Component_="Syncfusion.SfDataGrid.WinForms.dll_6" FileName="SYNCFU~4.DLL|Syncfusion.SfDataGrid.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.SfDataGrid.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfInput.WinForms.dll_6" Component_="Syncfusion.SfInput.WinForms.dll_6" FileName="SYNCFU~5.DLL|Syncfusion.SfInput.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.SfInput.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfListView.WinForms.dll_6" Component_="Syncfusion.SfListView.WinForms.dll_6" FileName="SYNCFU~6.DLL|Syncfusion.SfListView.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.SfListView.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Shared.Base.dll_6" Component_="Syncfusion.Shared.Base.dll_6" FileName="SYNCFU~7.DLL|Syncfusion.Shared.Base.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.Shared.Base.dll" SelfReg="false"/>
+    <ROW File="Number.addin_1" Component_="Number.addin" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
+    <ROW File="Number.addin_2" Component_="Number.addin_1" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
+    <ROW File="Number.addin_3" Component_="Number.addin_2" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
+    <ROW File="Number.addin_4" Component_="Number.addin_3" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
+    <ROW File="Number.addin_5" Component_="Number.addin_4" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
     <ROW File="Number.dll_6" Component_="Number.dll_6" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Number.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Core.WinForms.dll_6" Component_="Syncfusion.Core.WinForms.dll_6" FileName="SYNCFU~8.DLL|Syncfusion.Core.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.Core.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Data.WinForms.dll_6" Component_="Syncfusion.Data.WinForms.dll_6" FileName="SYNCFU~9.DLL|Syncfusion.Data.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Syncfusion.Data.WinForms.dll" SelfReg="false"/>
     <ROW File="Number.dll_7" Component_="Number.dll_7" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Number.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Core.WinForms.dll_7" Component_="Syncfusion.Core.WinForms.dll_7" FileName="SYNCFU~1.DLL|Syncfusion.Core.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.Core.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Data.WinForms.dll_7" Component_="Syncfusion.Data.WinForms.dll_7" FileName="SYNCFU~2.DLL|Syncfusion.Data.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.Data.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.DataSource.WinForms.dll_7" Component_="Syncfusion.DataSource.WinForms.dll_7" FileName="SYNCFU~3.DLL|Syncfusion.DataSource.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.DataSource.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.GridCommon.WinForms.dll_7" Component_="Syncfusion.GridCommon.WinForms.dll_7" FileName="SYNCFU~4.DLL|Syncfusion.GridCommon.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.GridCommon.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Licensing.dll_7" Component_="Syncfusion.Licensing.dll_7" FileName="SYNCFU~5.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.Licensing.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfDataGrid.WinForms.dll_7" Component_="Syncfusion.SfDataGrid.WinForms.dll_7" FileName="SYNCFU~6.DLL|Syncfusion.SfDataGrid.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.SfDataGrid.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfInput.WinForms.dll_7" Component_="Syncfusion.SfInput.WinForms.dll_7" FileName="SYNCFU~7.DLL|Syncfusion.SfInput.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.SfInput.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfListView.WinForms.dll_7" Component_="Syncfusion.SfListView.WinForms.dll_7" FileName="SYNCFU~8.DLL|Syncfusion.SfListView.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.SfListView.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Shared.Base.dll_7" Component_="Syncfusion.Shared.Base.dll_7" FileName="SYNCFU~9.DLL|Syncfusion.Shared.Base.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.Shared.Base.dll" SelfReg="false"/>
     <ROW File="Number.dll_8" Component_="Number.dll_8" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Number.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Core.WinForms.dll_8" Component_="Syncfusion.Core.WinForms.dll_8" FileName="SYNCFU~1.DLL|Syncfusion.Core.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.Core.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Data.WinForms.dll_8" Component_="Syncfusion.Data.WinForms.dll_8" FileName="SYNCFU~2.DLL|Syncfusion.Data.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.Data.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.DataSource.WinForms.dll_8" Component_="Syncfusion.DataSource.WinForms.dll_8" FileName="SYNCFU~3.DLL|Syncfusion.DataSource.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.DataSource.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.GridCommon.WinForms.dll_8" Component_="Syncfusion.GridCommon.WinForms.dll_8" FileName="SYNCFU~4.DLL|Syncfusion.GridCommon.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.GridCommon.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Licensing.dll_8" Component_="Syncfusion.Licensing.dll_8" FileName="SYNCFU~5.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.Licensing.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfDataGrid.WinForms.dll_8" Component_="Syncfusion.SfDataGrid.WinForms.dll_8" FileName="SYNCFU~6.DLL|Syncfusion.SfDataGrid.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.SfDataGrid.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfInput.WinForms.dll_8" Component_="Syncfusion.SfInput.WinForms.dll_8" FileName="SYNCFU~7.DLL|Syncfusion.SfInput.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.SfInput.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfListView.WinForms.dll_8" Component_="Syncfusion.SfListView.WinForms.dll_8" FileName="SYNCFU~8.DLL|Syncfusion.SfListView.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.SfListView.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Shared.Base.dll_8" Component_="Syncfusion.Shared.Base.dll_8" FileName="SYNCFU~9.DLL|Syncfusion.Shared.Base.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.Shared.Base.dll" SelfReg="false"/>
     <ROW File="Number.dll_9" Component_="Number.dll_9" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Number.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Core.WinForms.dll_9" Component_="Syncfusion.Core.WinForms.dll_9" FileName="SYNCFU~1.DLL|Syncfusion.Core.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.Core.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Data.WinForms.dll_9" Component_="Syncfusion.Data.WinForms.dll_9" FileName="SYNCFU~2.DLL|Syncfusion.Data.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.Data.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.DataSource.WinForms.dll_9" Component_="Syncfusion.DataSource.WinForms.dll_9" FileName="SYNCFU~3.DLL|Syncfusion.DataSource.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.DataSource.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.GridCommon.WinForms.dll_9" Component_="Syncfusion.GridCommon.WinForms.dll_9" FileName="SYNCFU~4.DLL|Syncfusion.GridCommon.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.GridCommon.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Licensing.dll_9" Component_="Syncfusion.Licensing.dll_9" FileName="SYNCFU~5.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.Licensing.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfDataGrid.WinForms.dll_9" Component_="Syncfusion.SfDataGrid.WinForms.dll_9" FileName="SYNCFU~6.DLL|Syncfusion.SfDataGrid.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.SfDataGrid.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfInput.WinForms.dll_9" Component_="Syncfusion.SfInput.WinForms.dll_9" FileName="SYNCFU~7.DLL|Syncfusion.SfInput.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.SfInput.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfListView.WinForms.dll_9" Component_="Syncfusion.SfListView.WinForms.dll_9" FileName="SYNCFU~8.DLL|Syncfusion.SfListView.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.SfListView.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Shared.Base.dll_9" Component_="Syncfusion.Shared.Base.dll_9" FileName="SYNCFU~9.DLL|Syncfusion.Shared.Base.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.Shared.Base.dll" SelfReg="false"/>
     <ROW File="Number.dll_10" Component_="Number.dll_10" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Number.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Core.WinForms.dll_10" Component_="Syncfusion.Core.WinForms.dll_10" FileName="SYNCFU~1.DLL|Syncfusion.Core.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.Core.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Data.WinForms.dll_10" Component_="Syncfusion.Data.WinForms.dll_10" FileName="SYNCFU~2.DLL|Syncfusion.Data.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.Data.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.DataSource.WinForms.dll_10" Component_="Syncfusion.DataSource.WinForms.dll_10" FileName="SYNCFU~3.DLL|Syncfusion.DataSource.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.DataSource.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.GridCommon.WinForms.dll_10" Component_="Syncfusion.GridCommon.WinForms.dll_10" FileName="SYNCFU~4.DLL|Syncfusion.GridCommon.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.GridCommon.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Licensing.dll_10" Component_="Syncfusion.Licensing.dll_10" FileName="SYNCFU~5.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.Licensing.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfDataGrid.WinForms.dll_10" Component_="Syncfusion.SfDataGrid.WinForms.dll_10" FileName="SYNCFU~6.DLL|Syncfusion.SfDataGrid.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.SfDataGrid.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfInput.WinForms.dll_10" Component_="Syncfusion.SfInput.WinForms.dll_10" FileName="SYNCFU~7.DLL|Syncfusion.SfInput.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.SfInput.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.SfListView.WinForms.dll_10" Component_="Syncfusion.SfListView.WinForms.dll_10" FileName="SYNCFU~8.DLL|Syncfusion.SfListView.WinForms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.SfListView.WinForms.dll" SelfReg="false"/>
-    <ROW File="Syncfusion.Shared.Base.dll_10" Component_="Syncfusion.Shared.Base.dll_10" FileName="SYNCFU~9.DLL|Syncfusion.Shared.Base.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.Shared.Base.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll" Component_="JetBrains.Annotations.dll" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll" Component_="Nice3point.Revit.Extensions.dll" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll_1" Component_="JetBrains.Annotations.dll_1" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll_1" Component_="Nice3point.Revit.Extensions.dll_1" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll_2" Component_="JetBrains.Annotations.dll_2" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll_2" Component_="Nice3point.Revit.Extensions.dll_2" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll_3" Component_="JetBrains.Annotations.dll_3" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll_3" Component_="Nice3point.Revit.Extensions.dll_3" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll_4" Component_="JetBrains.Annotations.dll_4" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll_4" Component_="Nice3point.Revit.Extensions.dll_4" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -260,73 +166,27 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="Warnings.addin"/>
     <ROW Feature_="MainFeature" Component_="ApplicationPlugins"/>
-    <ROW Feature_="MainFeature" Component_="Number.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Core.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Data.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.DataSource.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.GridCommon.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfDataGrid.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfListView.WinForms.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.Base.dll"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.DataSource.WinForms.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.GridCommon.WinForms.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfDataGrid.WinForms.dll_6"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_2"/>
     <ROW Feature_="MainFeature" Component_="Number.addin"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WinForms.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfListView.WinForms.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.Base.dll_6"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_3"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Core.WinForms.dll_6"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Data.WinForms.dll_6"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_4"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_4"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Core.WinForms.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Data.WinForms.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.DataSource.WinForms.dll_7"/>
     <ROW Feature_="MainFeature" Component_="Number.addin_1"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.GridCommon.WinForms.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfDataGrid.WinForms.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WinForms.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfListView.WinForms.dll_7"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.Base.dll_7"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Core.WinForms.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Data.WinForms.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.DataSource.WinForms.dll_8"/>
     <ROW Feature_="MainFeature" Component_="Number.addin_2"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.GridCommon.WinForms.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfDataGrid.WinForms.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WinForms.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfListView.WinForms.dll_8"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.Base.dll_8"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Core.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Data.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.DataSource.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.GridCommon.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfDataGrid.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfListView.WinForms.dll_9"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.Base.dll_9"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Core.WinForms.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Data.WinForms.dll_10"/>
     <ROW Feature_="MainFeature" Component_="Number.addin_3"/>
     <ROW Feature_="MainFeature" Component_="Number.addin_4"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.DataSource.WinForms.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.GridCommon.WinForms.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfDataGrid.WinForms.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WinForms.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.SfListView.WinForms.dll_10"/>
-    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.Base.dll_10"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Number2.exe" SourcePath="..\Number2.ico" Index="0"/>
