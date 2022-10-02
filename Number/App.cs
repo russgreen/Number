@@ -40,17 +40,17 @@ class App : IExternalApplication
         RibbonPanel panel = cachedUiCtrApp.CreateRibbonPanel(_tabName, Guid.NewGuid().ToString());
         panel.Title = "Number";
 
-        PushButtonData pbDataNumber = new PushButtonData("Number", "Number objects", Assembly.GetExecutingAssembly().Location, "Number.cmdNumber");
+        PushButtonData pbDataNumber = new PushButtonData("Number", $"Number{Environment.NewLine}Objects", Assembly.GetExecutingAssembly().Location, "Number.cmdNumber");
         PushButton pbNumber = (PushButton)panel.AddItem(pbDataNumber);
         pbNumber.ToolTip = "Number items in order by clicking on them in turn. Esc to finish.";
         pbNumber.LargeImage = PngImageSource("Number.Images.Number32.png");
 
-        PushButtonData pbDataNumberText = new PushButtonData("NumberText", "Number text", Assembly.GetExecutingAssembly().Location, "Number.cmdNumberText");
+        PushButtonData pbDataNumberText = new PushButtonData("NumberText", $"Number{Environment.NewLine}Text", Assembly.GetExecutingAssembly().Location, "Number.cmdNumberText");
         PushButton pbNumberText  = (PushButton)panel.AddItem(pbDataNumberText);
         pbNumberText.ToolTip = "Number text strings in order by clicking on them in turn. Esc to finish.";
         pbNumberText.LargeImage = PngImageSource("Number.Images.Number32.png");
 
-        ContextualHelp contextHelp = new ContextualHelp(ContextualHelpType.Url, @"C:\ProgramData\Autodesk\ApplicationPlugins\RG Number.bundle\Contents\Number.htm");
+        ContextualHelp contextHelp = new ContextualHelp(ContextualHelpType.Url, @"https://github.com/russgreen/Number");
         pbNumber.SetContextualHelp(contextHelp);
         pbNumberText.SetContextualHelp(contextHelp);
         //pbAutoNumberRooms.SetContextualHelp(contextHelp);
