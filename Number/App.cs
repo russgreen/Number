@@ -50,11 +50,6 @@ class App : IExternalApplication
         pbNumberText.ToolTip = "Number text strings in order by clicking on them in turn. Esc to finish.";
         pbNumberText.LargeImage = PngImageSource("Number.Images.Number32.png");
 
-        //PushButtonData pbDataAutoNumberRooms = new PushButtonData("NumberRooms", "Number rooms", Assembly.GetExecutingAssembly().Location, "Number.cmdAutoNumberRooms");
-        //PushButton pbAutoNumberRooms = (PushButton)panel.AddItem(pbDataAutoNumberRooms);
-        //pbAutoNumberRooms.ToolTip = "Automatically number rooms";
-        //pbAutoNumberRooms.LargeImage = PngImageSource("Number.Images.Number32.png");
-
         ContextualHelp contextHelp = new ContextualHelp(ContextualHelpType.Url, @"C:\ProgramData\Autodesk\ApplicationPlugins\RG Number.bundle\Contents\Number.htm");
         pbNumber.SetContextualHelp(contextHelp);
         pbNumberText.SetContextualHelp(contextHelp);
