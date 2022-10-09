@@ -349,6 +349,9 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+# Syncfusion license key
+SyncfusionKey.txt
+
 # Bundles and Installer
 Bundle
 Installer/*.back.aip

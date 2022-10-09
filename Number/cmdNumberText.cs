@@ -19,7 +19,6 @@ public class cmdNumberText : IExternalCommand
     private UIDocument _uidoc;
     private Selection _sel;
     private Document _doc;
-    private Util _util = new Util();
 
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {

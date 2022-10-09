@@ -8,6 +8,7 @@
     <Description>(re)number elements and text strings in Revit</Description>
     <Copyright>Copyright © Russell Green</Copyright>
     <Version>2.3.0</Version>
+	<UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
 	<LangVersion>latest</LangVersion>
     <!--<ImplicitUsings>true</ImplicitUsings>-->
@@ -64,20 +65,34 @@
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Models\**" />
+	  <EmbeddedResource Remove="Models\**" />
+	  <None Remove="Models\**" />
+	  <Page Remove="Models\**" />
+	</ItemGroup>
 	
   <ItemGroup>
     <None Remove="Images\Number32.png" />
+    <None Remove="Images\NumberRooms32.png" />
+    <None Remove="Images\NumberText32.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\Number32.png" />
+    <EmbeddedResource Include="Images\NumberRooms32.png" />
+    <EmbeddedResource Include="Images\NumberText32.png" />
   </ItemGroup>
 
   <ItemGroup>
+	<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.AdWindows" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*" />
+	<PackageReference Include="Syncfusion.SfInput.WPF" Version="20.3.0.48" />
   </ItemGroup>
 
   <ItemGroup>
@@ -93,9 +108,13 @@
     </None>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="cd &quot;$(SolutionDir)&quot;&#xD;&#xA;SyncfusionLicenseRegister.bat PreBuild $(ProjectDir)App.cs $(SolutionDir)SyncfusionKey.txt" />
+	</Target>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="cd &quot;$(SolutionDir)&quot;&#xD;&#xA;SyncfusionLicenseRegister.bat PostBuild $(ProjectDir)App.cs $(SolutionDir)SyncfusionKey.txt" />
+	</Target>
 
 	<!-- Build debug manifest at build time -->
 	<Target Name="CreateAddinManifest" AfterTargets="AfterBuild">
