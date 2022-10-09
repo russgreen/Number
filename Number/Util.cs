@@ -8,10 +8,11 @@ using System.Xml.Linq;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Nice3point.Revit.Extensions;
+using Number.Comparers;
 
 namespace Number;
 
-public class Util
+public static class Util
 {    
     public static Parameter FindParameterByName(ref Element element, string Definition)
     {
@@ -37,13 +38,13 @@ public class Util
     {
         return a.ToString("0.##");
     }
-    
+
     public static List<Category> GetCategoriesInActiveView()
     {
         // select all elements in the active view
         var allInView = new FilteredElementCollector(
-            App.revitDocument,
-            App.revitDocument.ActiveView.Id);
+            App.RevitDocument,
+            App.RevitDocument.ActiveView.Id);
 
         allInView.WhereElementIsNotElementType();
 
@@ -53,81 +54,31 @@ public class Util
                             .Select(x => x.Category)
                             .Distinct(new CategoryComparer())
                             .Where(x => x != null)
-                            .Where(x => x.Name.ToLower().Contains("<room separation>") == false)
-                            .Where(x => x.Name.ToLower().Contains("sheets") == false)
-                            .Where(x => x.Name.ToLower().Contains("schedule graphics") == false)
-                            .Where(x => x.Name.ToLower().Contains("lines") == false)
-                            .Where(x => x.Name.ToLower().Contains("legends") == false)
-                            .Where(x => x.Name.ToLower().Contains("title blocks") == false)
-                            .Where(x => x.Name.ToLower().Contains("tags") == false)
-                            .Where(x => x.Name.ToLower().Contains("dimensions") == false)
-                            .Where(x => x.Name.ToLower().Contains("text") == false)
-                            .Where(x => x.Name.ToLower().Contains("cameras") == false)
-                            .Where(x => x.Name.ToLower().Contains("elevations") == false)
-                            .Where(x => x.Name.ToLower().Contains("sections") == false)
-                            .Where(x => x.Name.ToLower().Contains("views") == false)
                             .OrderBy(x => x.Name)
                             .ToList();
 
         return categories.ToList();
     }
 
-    public static List<string> GetInstanceParametersByCategoryInActiveView(ElementId catID)
+    public static List<Parameter> GetInstanceParametersByCategoryInActiveView(ElementId catID)
     {
-        var instances = App.revitDocument
-            .GetInstances(App.revitDocument.ActiveView.Id, new ElementCategoryFilter(catID));
+        var instances = App.RevitDocument
+            .GetInstances(App.RevitDocument.ActiveView.Id, new ElementCategoryFilter(catID));
 
         // get the instance parameters of the family instances
-        var instanceParameters = new List<string>();
+        var instanceParameters = new List<Parameter>();
 
         foreach (var instance in instances)
         {
             foreach (Parameter parameter in instance.Parameters)
             {
-                //if parameter.IsReadonly is not false
-
-                if (parameter.IsReadOnly == false)
-                {
-                    switch (parameter.Definition.Name.ToLower() ?? "")
-                    {
-                        case "family":
-                            break;
-
-                        case "family and type":
-                            break;
-
-                        case "type":
-                            break;
-
-                        case "image":
-                            break;
-
-                        case "level":
-                            break;
-
-                        case "material":
-                            break;
-
-                        case "moves with nearby elements":
-                            break;
-
-                        case "phase created":
-                            break;
-
-                        case "phase demolished":
-                            break;
-
-                        default:
-                            instanceParameters.Add(parameter.Definition.Name);
-                            break;
-                    }
-                }
+                instanceParameters.Add(parameter);
             }
         }
 
         return instanceParameters
-            .Distinct()
-            .OrderBy(parameterName => parameterName)
+            .Distinct(new ParameterComparer())
+            .OrderBy(x => x.Definition.Name)
             .ToList();
     }
 }

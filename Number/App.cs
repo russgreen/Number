@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Reflection;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.Attributes;
@@ -11,8 +11,9 @@ namespace Number;
 [Regeneration(RegenerationOption.Manual)]
 class App : IExternalApplication
 {
-    public static UIControlledApplication cachedUiCtrApp;
-    public static Autodesk.Revit.DB.Document revitDocument;
+    public static UIControlledApplication CachedUiCtrApp;
+    public static UIApplication CachedUiApp;
+    public static Autodesk.Revit.DB.Document RevitDocument;
 
     private readonly string _tabName = "RG Tools";
 
@@ -23,8 +24,11 @@ class App : IExternalApplication
 
     public Result OnStartup(UIControlledApplication application)
     {
-        cachedUiCtrApp = application;
+        CachedUiCtrApp = application;
         var ribbonPanel = CreateRibbonPanel();
+
+        Syncfusion.Licensing.SyncfusionLicenseProvider
+            .RegisterLicense("##SyncfusionLicense##");
 
         return Result.Succeeded;
     }
@@ -33,11 +37,11 @@ class App : IExternalApplication
     {
         try
         {
-            cachedUiCtrApp.CreateRibbonTab(_tabName);
+            CachedUiCtrApp.CreateRibbonTab(_tabName);
         }
         catch { }
 
-        RibbonPanel panel = cachedUiCtrApp.CreateRibbonPanel(_tabName, Guid.NewGuid().ToString());
+        RibbonPanel panel = CachedUiCtrApp.CreateRibbonPanel(_tabName, Guid.NewGuid().ToString());
         panel.Title = "Number";
 
         PushButtonData pbDataNumber = new PushButtonData("Number", $"Number{Environment.NewLine}Objects", Assembly.GetExecutingAssembly().Location, "Number.cmdNumber");
@@ -48,12 +52,11 @@ class App : IExternalApplication
         PushButtonData pbDataNumberText = new PushButtonData("NumberText", $"Number{Environment.NewLine}Text", Assembly.GetExecutingAssembly().Location, "Number.cmdNumberText");
         PushButton pbNumberText  = (PushButton)panel.AddItem(pbDataNumberText);
         pbNumberText.ToolTip = "Number text strings in order by clicking on them in turn. Esc to finish.";
-        pbNumberText.LargeImage = PngImageSource("Number.Images.Number32.png");
+        pbNumberText.LargeImage = PngImageSource("Number.Images.NumberText32.png");
 
         ContextualHelp contextHelp = new ContextualHelp(ContextualHelpType.Url, @"https://github.com/russgreen/Number");
         pbNumber.SetContextualHelp(contextHelp);
-        pbNumberText.SetContextualHelp(contextHelp);
-        //pbAutoNumberRooms.SetContextualHelp(contextHelp);
+        pbNumberText.SetContextualHelp(contextHelp);     
 
         return panel;
     }
