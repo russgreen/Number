@@ -11,10 +11,10 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="Number2.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Russell Green"/>
-    <ROW Property="ProductCode" Value="1033:{FFEC44D2-66D6-4B58-9D8E-46F3D4B73377} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{B96777E4-490F-457E-97B4-C935D78310C7} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Number"/>
-    <ROW Property="ProductVersion" Value="2.3"/>
+    <ROW Property="ProductVersion" Value="2.4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{F04F085F-5478-481E-B50C-946A19EEF10F}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -32,7 +32,6 @@
     <ROW Directory="ApplicationPlugins_Dir" Directory_Parent="Autodesk_Dir" DefaultDir="APPLIC~1|ApplicationPlugins"/>
     <ROW Directory="Autodesk_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="Autodesk"/>
     <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
-    <ROW Directory="Number_1_Dir" Directory_Parent="__Dir" DefaultDir="Number"/>
     <ROW Directory="Number_2_Dir" Directory_Parent="__1_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_3_Dir" Directory_Parent="__2_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_4_Dir" Directory_Parent="__3_Dir" DefaultDir="Number"/>
@@ -43,50 +42,101 @@
     <ROW Directory="__2_Dir" Directory_Parent="Addins_Dir" DefaultDir="2021"/>
     <ROW Directory="__3_Dir" Directory_Parent="Addins_Dir" DefaultDir="2022"/>
     <ROW Directory="__4_Dir" Directory_Parent="Addins_Dir" DefaultDir="2023"/>
-    <ROW Directory="__Dir" Directory_Parent="Addins_Dir" DefaultDir="2019"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{6F959207-42EB-49FA-AEB8-85858FF0FC12}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="ApplicationPlugins" ComponentId="{F65DFF13-4CBB-4DF8-A690-D2B245B8E0FD}" Directory_="ApplicationPlugins_Dir" Attributes="0"/>
-    <ROW Component="JetBrains.Annotations.dll" ComponentId="{4ABA9537-607B-4A3D-8A40-4A42369AD4C9}" Directory_="Number_1_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll" ComponentId="{1828D633-3DBC-43E1-871F-3F5BE662F4CD}" Directory_="Number_5_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll_1" ComponentId="{8820BE19-C31A-4AEB-9E14-C43FDCFCED90}" Directory_="Number_4_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_1"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll_2" ComponentId="{A767C181-BF66-4C56-BB31-4893E4FAFB88}" Directory_="Number_3_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_2"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll_3" ComponentId="{55F5ADCB-AB66-438F-8FE0-CD78CC8F3E70}" Directory_="Number_2_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_3"/>
     <ROW Component="JetBrains.Annotations.dll_1" ComponentId="{C788019F-A8C0-4C0A-83EB-2CFE981BD2B9}" Directory_="Number_2_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_1"/>
     <ROW Component="JetBrains.Annotations.dll_2" ComponentId="{A8A15C82-E8E0-4B00-85A5-90FBF81795B0}" Directory_="Number_3_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_2"/>
     <ROW Component="JetBrains.Annotations.dll_3" ComponentId="{9680B3C2-0399-49B6-A96F-8BFD1A287867}" Directory_="Number_4_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_3"/>
     <ROW Component="JetBrains.Annotations.dll_4" ComponentId="{566F9B2C-6FD3-4087-9451-FAB17DDE0286}" Directory_="Number_5_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_4"/>
-    <ROW Component="Nice3point.Revit.Extensions.dll" ComponentId="{E49C75BA-5A38-4086-89A4-CF65577853C8}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{3D8D8372-1CF7-4DAC-AFCA-8ABB839DB909}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll_1" ComponentId="{C94F80C8-4294-45F3-B7C0-EB1F2555342C}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll_1"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll_2" ComponentId="{1235B6DF-2A3F-4174-872C-83D47DEEB23E}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll_2"/>
+    <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll_3" ComponentId="{21ABFBFE-D995-452B-A550-ADEFDE2CA540}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll_3"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{AEAEBC85-73B1-4B31-B174-B8CB89473DA9}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll_1" ComponentId="{6CEE93E2-005A-40EC-87C8-2E969D686F2C}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_1"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll_2" ComponentId="{FB396404-67CD-4C44-868D-FD804A9E0726}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_2"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll_3" ComponentId="{022297E9-99A6-4BD9-95B2-6CEBE1F28C87}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_3"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_1" ComponentId="{A3679CB9-DFC0-4400-A06E-9380F96BED0E}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_1"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_2" ComponentId="{C27A6AEB-CB85-48CB-863D-39567A9772A6}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_2"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_3" ComponentId="{03B49B4A-9CAF-4A4A-A2B3-23F781FD5608}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_3"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_4" ComponentId="{DB7FCEB1-221C-42D8-89F5-DF62275BCEA7}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_4"/>
-    <ROW Component="Number.addin" ComponentId="{70A7528D-B9EF-4ECF-9BB1-E28AC9508181}" Directory_="__Dir" Attributes="0" KeyPath="Number.addin_1" Type="0"/>
     <ROW Component="Number.addin_1" ComponentId="{B91014FF-2527-4913-8DA1-AAC9CAF664E8}" Directory_="__1_Dir" Attributes="0" KeyPath="Number.addin_2" Type="0"/>
     <ROW Component="Number.addin_2" ComponentId="{3B751914-B93B-4EF9-874D-0AA8A874E2BE}" Directory_="__2_Dir" Attributes="0" KeyPath="Number.addin_3" Type="0"/>
     <ROW Component="Number.addin_3" ComponentId="{3FA39415-5BDF-411B-A01E-E166A4AAD85E}" Directory_="__3_Dir" Attributes="0" KeyPath="Number.addin_4" Type="0"/>
     <ROW Component="Number.addin_4" ComponentId="{1F017CE0-AC00-4F4F-B0F6-48D4600E67B7}" Directory_="__4_Dir" Attributes="0" KeyPath="Number.addin_5" Type="0"/>
     <ROW Component="Number.dll_10" ComponentId="{D16291D9-3EF2-48CF-9146-31F0D4548031}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Number.dll_10"/>
-    <ROW Component="Number.dll_6" ComponentId="{F67DEAFF-9648-4CB9-BC96-4E322E0130C2}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Number.dll_6"/>
     <ROW Component="Number.dll_7" ComponentId="{E77D3131-5E9B-4AE6-89B6-0CFB77F9A40D}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Number.dll_7"/>
     <ROW Component="Number.dll_8" ComponentId="{3434938D-1D41-41C7-80EA-AD14DA4DC1C1}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Number.dll_8"/>
     <ROW Component="Number.dll_9" ComponentId="{D6D142EE-EC02-47C8-83E4-C0B2B974189B}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Number.dll_9"/>
     <ROW Component="ProductInformation" ComponentId="{87BBA69F-E1FB-466B-AFDE-E160676B203D}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="Syncfusion.Licensing.dll" ComponentId="{D68E7097-439F-4D0E-A70B-0F64E23F3A5F}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll"/>
+    <ROW Component="Syncfusion.Licensing.dll_1" ComponentId="{1C8702D0-51BC-4916-9995-75B87C3336EB}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_1"/>
+    <ROW Component="Syncfusion.Licensing.dll_2" ComponentId="{DCBC98B7-C2B9-49D2-9BC4-2404418FFA18}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_2"/>
+    <ROW Component="Syncfusion.Licensing.dll_3" ComponentId="{56022625-2F9F-4E7C-ABB7-52554EADE9EC}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.Licensing.dll_3"/>
+    <ROW Component="Syncfusion.SfInput.WPF.dll" ComponentId="{C6A7B1E1-CE86-4614-8653-A3046FC9E4FE}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WPF.dll"/>
+    <ROW Component="Syncfusion.SfInput.WPF.dll_1" ComponentId="{B092AB74-A85F-4A68-91AD-DABDB041510B}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WPF.dll_1"/>
+    <ROW Component="Syncfusion.SfInput.WPF.dll_2" ComponentId="{B63E405F-6BEA-4486-9D10-4A8770F13298}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WPF.dll_2"/>
+    <ROW Component="Syncfusion.SfInput.WPF.dll_3" ComponentId="{ACABD336-914C-45A0-B101-41AD7409D098}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.SfInput.WPF.dll_3"/>
+    <ROW Component="Syncfusion.Shared.WPF.dll" ComponentId="{E84D899A-B7B3-4763-AFF3-49C17CE27F77}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Syncfusion.Shared.WPF.dll"/>
+    <ROW Component="Syncfusion.Shared.WPF.dll_1" ComponentId="{316A2F5D-A2D3-446D-9F2A-81AF4407869C}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Syncfusion.Shared.WPF.dll_1"/>
+    <ROW Component="Syncfusion.Shared.WPF.dll_2" ComponentId="{FE94777C-CAFA-4EC2-A4C0-1F75DA9E191A}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Syncfusion.Shared.WPF.dll_2"/>
+    <ROW Component="Syncfusion.Shared.WPF.dll_3" ComponentId="{F4E19294-11EF-41C3-BC26-62AECA265892}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Syncfusion.Shared.WPF.dll_3"/>
+    <ROW Component="System.Buffers.dll" ComponentId="{F4E0A807-BA95-4CEE-9F65-9D0EFFD9A16C}" Directory_="Number_5_Dir" Attributes="0" KeyPath="System.Buffers.dll"/>
+    <ROW Component="System.Buffers.dll_1" ComponentId="{2CA5C08C-665B-4B2B-9984-577CED1BA2D1}" Directory_="Number_4_Dir" Attributes="0" KeyPath="System.Buffers.dll_1"/>
+    <ROW Component="System.Buffers.dll_2" ComponentId="{9E1206EA-1B38-424B-B59F-3B8349C8EAEE}" Directory_="Number_3_Dir" Attributes="0" KeyPath="System.Buffers.dll_2"/>
+    <ROW Component="System.Buffers.dll_3" ComponentId="{F434CDCF-9486-4FE5-B98B-A690841FC2DC}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Buffers.dll_3"/>
+    <ROW Component="System.ComponentModel.Annotations.dll" ComponentId="{E54AF2DB-435A-4B51-B9D6-D6EFEBCAC9E5}" Directory_="Number_5_Dir" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll"/>
+    <ROW Component="System.ComponentModel.Annotations.dll_1" ComponentId="{7EEA97E9-398A-4F0E-BDAE-48E0D472F4E2}" Directory_="Number_4_Dir" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll_1"/>
+    <ROW Component="System.ComponentModel.Annotations.dll_2" ComponentId="{9ECB74F2-050A-4C7A-B8E8-E17D7D880E0D}" Directory_="Number_3_Dir" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll_2"/>
+    <ROW Component="System.ComponentModel.Annotations.dll_3" ComponentId="{041FA0B3-E8ED-449A-99C9-5A64DEC73EFC}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll_3"/>
+    <ROW Component="System.Data.Common.dll" ComponentId="{ACE33157-075C-4323-8AC3-D16D5A73DE50}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Data.Common.dll"/>
+    <ROW Component="System.Diagnostics.StackTrace.dll" ComponentId="{3AEABE6B-FF52-4FA1-9F14-D3677016B403}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Diagnostics.StackTrace.dll"/>
+    <ROW Component="System.Diagnostics.Tracing.dll" ComponentId="{E2AFE5B5-3DDC-42DF-9991-0835ABBBF4AE}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Diagnostics.Tracing.dll"/>
+    <ROW Component="System.Globalization.Extensions.dll" ComponentId="{54856564-1DE6-4E28-BD64-EF667CAF006C}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Globalization.Extensions.dll"/>
+    <ROW Component="System.IO.Compression.dll" ComponentId="{2C4A681C-70AA-4F32-BA71-4C811E78AB99}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.IO.Compression.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{498A37B5-60A5-4256-85A2-0191CF4A56E1}" Directory_="Number_5_Dir" Attributes="0" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Memory.dll_1" ComponentId="{332DB897-4D67-4C56-A738-7A39C8D95227}" Directory_="Number_4_Dir" Attributes="0" KeyPath="System.Memory.dll_1"/>
+    <ROW Component="System.Memory.dll_2" ComponentId="{1B3FCE3D-9C49-44A0-BA1A-991EBCED0995}" Directory_="Number_3_Dir" Attributes="0" KeyPath="System.Memory.dll_2"/>
+    <ROW Component="System.Memory.dll_3" ComponentId="{7203F0AB-CC9C-478B-91C0-FD9C18F2EF68}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Memory.dll_3"/>
+    <ROW Component="System.Net.Http.dll" ComponentId="{421AF2A0-274D-475F-8B4B-0E826F885696}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Net.Http.dll"/>
+    <ROW Component="System.Net.Sockets.dll" ComponentId="{E36C2F44-BA2F-4562-AEF0-358A52D0BB49}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Net.Sockets.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll" ComponentId="{EB296F2E-1612-4012-8EA1-80FF7A41676B}" Directory_="Number_5_Dir" Attributes="0" KeyPath="System.Numerics.Vectors.dll"/>
+    <ROW Component="System.Numerics.Vectors.dll_1" ComponentId="{F9A8A279-A173-4B3E-B37A-9868E87F9FAD}" Directory_="Number_4_Dir" Attributes="0" KeyPath="System.Numerics.Vectors.dll_1"/>
+    <ROW Component="System.Numerics.Vectors.dll_2" ComponentId="{7AEC0CBC-A9A7-4CD5-8DC4-399AA696BA0F}" Directory_="Number_3_Dir" Attributes="0" KeyPath="System.Numerics.Vectors.dll_2"/>
+    <ROW Component="System.Numerics.Vectors.dll_3" ComponentId="{D27709B8-9FBA-43C3-9D23-345DEDE00B1A}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Numerics.Vectors.dll_3"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll" ComponentId="{D10C7020-A2D1-42CF-B8DA-82D6B7EDC06A}" Directory_="Number_5_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll_1" ComponentId="{EE5BC2C5-5B5B-446B-9AC1-A4A155EDE189}" Directory_="Number_4_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll_1"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll_2" ComponentId="{36B46E5C-E9C1-46C5-9D27-1F4124B04E58}" Directory_="Number_3_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll_2"/>
+    <ROW Component="System.Runtime.CompilerServices.Unsafe.dll_3" ComponentId="{8BBEED4B-870E-4C39-9828-9BF022BCB5E5}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll_3"/>
+    <ROW Component="System.Runtime.Serialization.Primitives.dll" ComponentId="{43C06088-A508-4325-B2D5-111692452524}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW Component="System.Security.Cryptography.Algorithms.dll" ComponentId="{4DF76BE1-A5EF-4E61-AACC-F10F364DD6F8}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Algorithms.dll"/>
+    <ROW Component="System.Security.SecureString.dll" ComponentId="{A1064EED-939E-4CB2-965D-F74E839D1D7D}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Security.SecureString.dll"/>
+    <ROW Component="System.Threading.Overlapped.dll" ComponentId="{F4AB2F55-F002-4603-A4BD-DBAFD0F34D2A}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Threading.Overlapped.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll" ComponentId="{0F36EDB9-4427-4068-874F-F198C98AF603}" Directory_="Number_5_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll_1" ComponentId="{89248C00-DD0C-4C4B-BF2F-08D40AB813CB}" Directory_="Number_4_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll_1"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll_2" ComponentId="{D8A50492-AF38-4C07-92B6-16A162BE6292}" Directory_="Number_3_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll_2"/>
+    <ROW Component="System.Threading.Tasks.Extensions.dll_3" ComponentId="{60B72090-3C25-4680-BDF1-6639F2BC4585}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll_3"/>
+    <ROW Component="System.Xml.XPath.XDocument.dll" ComponentId="{F05877E9-EAF6-4E3D-9ADC-F410DDC06DDA}" Directory_="Number_2_Dir" Attributes="0" KeyPath="System.Xml.XPath.XDocument.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="Number.addin_1" Component_="Number.addin" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
     <ROW File="Number.addin_2" Component_="Number.addin_1" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
     <ROW File="Number.addin_3" Component_="Number.addin_2" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
     <ROW File="Number.addin_4" Component_="Number.addin_3" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
     <ROW File="Number.addin_5" Component_="Number.addin_4" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
-    <ROW File="Number.dll_6" Component_="Number.dll_6" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Number.dll" SelfReg="false"/>
     <ROW File="Number.dll_7" Component_="Number.dll_7" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Number.dll" SelfReg="false"/>
     <ROW File="Number.dll_8" Component_="Number.dll_8" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Number.dll" SelfReg="false"/>
     <ROW File="Number.dll_9" Component_="Number.dll_9" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Number.dll" SelfReg="false"/>
     <ROW File="Number.dll_10" Component_="Number.dll_10" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Number.dll" SelfReg="false"/>
-    <ROW File="JetBrains.Annotations.dll" Component_="JetBrains.Annotations.dll" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\JetBrains.Annotations.dll" SelfReg="false"/>
-    <ROW File="Nice3point.Revit.Extensions.dll" Component_="Nice3point.Revit.Extensions.dll" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R19\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
     <ROW File="JetBrains.Annotations.dll_1" Component_="JetBrains.Annotations.dll_1" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\JetBrains.Annotations.dll" SelfReg="false"/>
     <ROW File="Nice3point.Revit.Extensions.dll_1" Component_="Nice3point.Revit.Extensions.dll_1" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
     <ROW File="JetBrains.Annotations.dll_2" Component_="JetBrains.Annotations.dll_2" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\JetBrains.Annotations.dll" SelfReg="false"/>
@@ -95,6 +145,66 @@
     <ROW File="Nice3point.Revit.Extensions.dll_3" Component_="Nice3point.Revit.Extensions.dll_3" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
     <ROW File="JetBrains.Annotations.dll_4" Component_="JetBrains.Annotations.dll_4" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\JetBrains.Annotations.dll" SelfReg="false"/>
     <ROW File="Nice3point.Revit.Extensions.dll_4" Component_="Nice3point.Revit.Extensions.dll_4" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="CommunityToolkit.Mvvm.dll" Component_="CommunityToolkit.Mvvm.dll" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICROS~2.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Licensing.dll" Component_="Syncfusion.Licensing.dll" FileName="SYNCFU~1.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.Licensing.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.SfInput.WPF.dll" Component_="Syncfusion.SfInput.WPF.dll" FileName="SYNCFU~2.DLL|Syncfusion.SfInput.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.SfInput.WPF.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Shared.WPF.dll" Component_="Syncfusion.Shared.WPF.dll" FileName="SYNCFU~3.DLL|Syncfusion.Shared.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\Syncfusion.Shared.WPF.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll" Component_="System.ComponentModel.Annotations.dll" FileName="SYSTEM~2.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~6.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="CommunityToolkit.Mvvm.dll_1" Component_="CommunityToolkit.Mvvm.dll_1" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll_1" Component_="Microsoft.Bcl.AsyncInterfaces.dll_1" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll_1" Component_="Microsoft.Xaml.Behaviors.dll_1" FileName="MICROS~2.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Licensing.dll_1" Component_="Syncfusion.Licensing.dll_1" FileName="SYNCFU~1.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.Licensing.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.SfInput.WPF.dll_1" Component_="Syncfusion.SfInput.WPF.dll_1" FileName="SYNCFU~2.DLL|Syncfusion.SfInput.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.SfInput.WPF.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Shared.WPF.dll_1" Component_="Syncfusion.Shared.WPF.dll_1" FileName="SYNCFU~3.DLL|Syncfusion.Shared.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\Syncfusion.Shared.WPF.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.dll_1" Component_="System.Buffers.dll_1" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll_1" Component_="System.ComponentModel.Annotations.dll_1" FileName="SYSTEM~2.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.Memory.dll_1" Component_="System.Memory.dll_1" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll_1" Component_="System.Numerics.Vectors.dll_1" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll_1" Component_="System.Runtime.CompilerServices.Unsafe.dll_1" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll_1" Component_="System.Threading.Tasks.Extensions.dll_1" FileName="SYSTEM~6.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R22\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="CommunityToolkit.Mvvm.dll_2" Component_="CommunityToolkit.Mvvm.dll_2" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll_2" Component_="Microsoft.Bcl.AsyncInterfaces.dll_2" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll_2" Component_="Microsoft.Xaml.Behaviors.dll_2" FileName="MICROS~2.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Licensing.dll_2" Component_="Syncfusion.Licensing.dll_2" FileName="SYNCFU~1.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.Licensing.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.SfInput.WPF.dll_2" Component_="Syncfusion.SfInput.WPF.dll_2" FileName="SYNCFU~2.DLL|Syncfusion.SfInput.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.SfInput.WPF.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Shared.WPF.dll_2" Component_="Syncfusion.Shared.WPF.dll_2" FileName="SYNCFU~3.DLL|Syncfusion.Shared.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\Syncfusion.Shared.WPF.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.dll_2" Component_="System.Buffers.dll_2" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll_2" Component_="System.ComponentModel.Annotations.dll_2" FileName="SYSTEM~2.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.Memory.dll_2" Component_="System.Memory.dll_2" FileName="SYSTEM~3.DLL|System.Memory.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll_2" Component_="System.Numerics.Vectors.dll_2" FileName="SYSTEM~4.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll_2" Component_="System.Runtime.CompilerServices.Unsafe.dll_2" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll_2" Component_="System.Threading.Tasks.Extensions.dll_2" FileName="SYSTEM~6.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R21\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="CommunityToolkit.Mvvm.dll_3" Component_="CommunityToolkit.Mvvm.dll_3" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll_3" Component_="Microsoft.Bcl.AsyncInterfaces.dll_3" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll_3" Component_="Microsoft.Xaml.Behaviors.dll_3" FileName="MICROS~2.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Licensing.dll_3" Component_="Syncfusion.Licensing.dll_3" FileName="SYNCFU~1.DLL|Syncfusion.Licensing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.Licensing.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.SfInput.WPF.dll_3" Component_="Syncfusion.SfInput.WPF.dll_3" FileName="SYNCFU~2.DLL|Syncfusion.SfInput.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.SfInput.WPF.dll" SelfReg="false"/>
+    <ROW File="Syncfusion.Shared.WPF.dll_3" Component_="Syncfusion.Shared.WPF.dll_3" FileName="SYNCFU~3.DLL|Syncfusion.Shared.WPF.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\Syncfusion.Shared.WPF.dll" SelfReg="false"/>
+    <ROW File="System.Buffers.dll_3" Component_="System.Buffers.dll_3" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Buffers.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll_3" Component_="System.ComponentModel.Annotations.dll_3" FileName="SYSTEM~2.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.Data.Common.dll" Component_="System.Data.Common.dll" FileName="SYSTEM~3.DLL|System.Data.Common.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Data.Common.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.StackTrace.dll" Component_="System.Diagnostics.StackTrace.dll" FileName="SYSTEM~4.DLL|System.Diagnostics.StackTrace.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Diagnostics.StackTrace.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.Tracing.dll" Component_="System.Diagnostics.Tracing.dll" FileName="SYSTEM~5.DLL|System.Diagnostics.Tracing.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Diagnostics.Tracing.dll" SelfReg="false"/>
+    <ROW File="System.Globalization.Extensions.dll" Component_="System.Globalization.Extensions.dll" FileName="SYSTEM~6.DLL|System.Globalization.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Globalization.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.IO.Compression.dll" Component_="System.IO.Compression.dll" FileName="SYSTEM~7.DLL|System.IO.Compression.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.IO.Compression.dll" SelfReg="false"/>
+    <ROW File="System.Memory.dll_3" Component_="System.Memory.dll_3" FileName="SYSTEM~8.DLL|System.Memory.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Memory.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.dll" Component_="System.Net.Http.dll" FileName="SYSTEM~9.DLL|System.Net.Http.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Net.Http.dll" SelfReg="false"/>
+    <ROW File="System.Net.Sockets.dll" Component_="System.Net.Sockets.dll" FileName="SYSTE~10.DLL|System.Net.Sockets.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Net.Sockets.dll" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll_3" Component_="System.Numerics.Vectors.dll_3" FileName="SYSTE~11.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Numerics.Vectors.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll_3" Component_="System.Runtime.CompilerServices.Unsafe.dll_3" FileName="SYSTE~12.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Serialization.Primitives.dll" Component_="System.Runtime.Serialization.Primitives.dll" FileName="SYSTE~13.DLL|System.Runtime.Serialization.Primitives.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Runtime.Serialization.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.Algorithms.dll" Component_="System.Security.Cryptography.Algorithms.dll" FileName="SYSTE~14.DLL|System.Security.Cryptography.Algorithms.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Security.Cryptography.Algorithms.dll" SelfReg="false"/>
+    <ROW File="System.Security.SecureString.dll" Component_="System.Security.SecureString.dll" FileName="SYSTE~15.DLL|System.Security.SecureString.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Security.SecureString.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Overlapped.dll" Component_="System.Threading.Overlapped.dll" FileName="SYSTE~16.DLL|System.Threading.Overlapped.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Threading.Overlapped.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll_3" Component_="System.Threading.Tasks.Extensions.dll_3" FileName="SYSTE~17.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Xml.XPath.XDocument.dll" Component_="System.Xml.XPath.XDocument.dll" FileName="SYSTE~18.DLL|System.Xml.XPath.XDocument.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R20\System.Xml.XPath.XDocument.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -167,16 +277,12 @@
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="ApplicationPlugins"/>
-    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll"/>
-    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll"/>
     <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_1"/>
     <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_1"/>
     <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_2"/>
-    <ROW Feature_="MainFeature" Component_="Number.addin"/>
     <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_2"/>
     <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_3"/>
     <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_3"/>
-    <ROW Feature_="MainFeature" Component_="Number.dll_6"/>
     <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_4"/>
     <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_4"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_7"/>
@@ -187,6 +293,66 @@
     <ROW Feature_="MainFeature" Component_="Number.dll_10"/>
     <ROW Feature_="MainFeature" Component_="Number.addin_3"/>
     <ROW Feature_="MainFeature" Component_="Number.addin_4"/>
+    <ROW Feature_="MainFeature" Component_="CommunityToolkit.Mvvm.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WPF.dll"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.WPF.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Annotations.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="CommunityToolkit.Mvvm.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WPF.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.WPF.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Annotations.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="CommunityToolkit.Mvvm.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WPF.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.WPF.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Annotations.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="CommunityToolkit.Mvvm.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Bcl.AsyncInterfaces.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Licensing.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.SfInput.WPF.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Syncfusion.Shared.WPF.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.Buffers.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Annotations.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.Common.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.StackTrace.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.Tracing.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Globalization.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Compression.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Memory.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Sockets.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Numerics.Vectors.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.Unsafe.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Algorithms.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.SecureString.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Overlapped.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.XPath.XDocument.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Number2.exe" SourcePath="..\Number2.ico" Index="0"/>

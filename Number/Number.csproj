@@ -7,11 +7,12 @@
     <Platforms>x64</Platforms>
     <Description>(re)number elements and text strings in Revit</Description>
     <Copyright>Copyright © Russell Green</Copyright>
-    <Version>2.3.0</Version>
+    <Version>2.4.0</Version>
 	<UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
 	<LangVersion>latest</LangVersion>
-    <!--<ImplicitUsings>true</ImplicitUsings>-->
+	<LangVersion>10</LangVersion>
+	<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
 
 	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
@@ -49,7 +50,7 @@
 		<TargetFramework>net48</TargetFramework>
 		<RevitVersion>2023</RevitVersion>
 		<DefineConstants>$(DefineConstants);REVIT2023</DefineConstants>
-		<DefineConstants>$(DefineConstants);REVIT2023_OR_GREATER</DefineConstants>
+		<DefineConstants>$(DefineConstants);REVIT2022_OR_GREATER;REVIT2023_OR_GREATER</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -81,7 +82,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Images\Number32.png" />
-    <EmbeddedResource Include="Images\NumberRooms32.png" />
     <EmbeddedResource Include="Images\NumberText32.png" />
   </ItemGroup>
 
