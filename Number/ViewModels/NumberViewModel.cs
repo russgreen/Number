@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows;
 using Nice3point.Revit.Extensions;
 using System.ComponentModel.DataAnnotations;
+using Number.SelectionFilters;
 
 namespace Number.ViewModels;
 
@@ -241,7 +242,9 @@ internal partial class NumberViewModel : BaseViewModel
                 {
                     t.Start();
 
-                    var elem = App.RevitDocument.GetElement(_selection.PickObject(ObjectType.Element));
+                    var selectionFilter = new CategorySelectionFilter(_selectedCategory.Name);
+
+                    var elem = App.RevitDocument.GetElement(_selection.PickObject(ObjectType.Element, selectionFilter));
 
                     if (_supressDuplicateMarkValues == true)
                     {
