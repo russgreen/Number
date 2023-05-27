@@ -3,7 +3,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI.Selection;
 
 
-namespace Number;
+namespace Number.PickFilters;
 
 public class TextNotePickFilter : ISelectionFilter
 {

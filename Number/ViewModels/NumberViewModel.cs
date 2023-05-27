@@ -20,7 +20,7 @@ internal partial class NumberViewModel : BaseViewModel
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(Sample))]
-    private int _number;
+    private int _number = 1;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(Sample))]
@@ -71,11 +71,11 @@ internal partial class NumberViewModel : BaseViewModel
 
     private Selection _selection;
 
-    private string _formattedNumberString => _number.ToString(_numberFormat);
+    private string _formattedNumberString => Number.ToString(NumberFormat);
 
-    public bool NumberEnabled => _selectedParameter != null;
+    public bool NumberEnabled => SelectedParameter != null;
 
-    public string Sample => $"{_prefix}{_formattedNumberString}{_suffix}";
+    public string Sample => $"{Prefix}{_formattedNumberString}{Suffix}";
 
     public NumberViewModel()
     {
@@ -110,10 +110,10 @@ internal partial class NumberViewModel : BaseViewModel
     [RelayCommand]
     private void LoadParameters()
     {
-        if(_selectedCategory != null)
+        if(SelectedCategory != null)
         {
 #if REVIT2022_OR_GREATER
-            Parameters = Util.GetInstanceParametersByCategoryInActiveView(_selectedCategory.Id)
+            Parameters = Util.GetInstanceParametersByCategoryInActiveView(SelectedCategory.Id)
                 .Where(x => x.Definition.GetDataType() == SpecTypeId.String.Text)
                 .Where(x => x.Definition.Name.ToLower() != "family name")
                 .Where(x => x.Definition.Name.ToLower() != "family and type")
@@ -124,7 +124,7 @@ internal partial class NumberViewModel : BaseViewModel
                 .ToList();
             
 #else
-            Parameters = Util.GetInstanceParametersByCategoryInActiveView(_selectedCategory.Id)
+            Parameters = Util.GetInstanceParametersByCategoryInActiveView(SelectedCategory.Id)
                 .Where(x => x.Definition.ParameterType == ParameterType.Text)
                 .Where(x => x.Definition.Name.ToLower() != "family name")
                 .Where(x => x.Definition.Name.ToLower() != "family and type")
@@ -144,12 +144,12 @@ internal partial class NumberViewModel : BaseViewModel
     [RelayCommand]
     private void CheckIfParameterIsMark()
     {
-        if (_selectedParameter != null)
+        if (SelectedParameter != null)
         {
             IsMarkParameter = false;
             SupressDuplicateMarkValues = false;
 
-            if (_selectedParameter.Definition.Name == "Mark")
+            if (SelectedParameter.Definition.Name == "Mark")
             {
                 IsMarkParameter = true;
                 SupressDuplicateMarkValues = true;
@@ -212,14 +212,14 @@ internal partial class NumberViewModel : BaseViewModel
 
         try
         {
-            if (_isolateModelCategoryInView == true)
+            if (IsolateModelCategoryInView == true)
             {
                 // temporarily isolate model category selected
                 IList<ElementId> ids = new List<ElementId>();
 
                 foreach (Category cat in Util.GetCategoriesInActiveView())
                 {
-                    if (cat.Name.ToLower().Contains("tags") == true | cat.Name.ToLower().Contains(_selectedCategory.Name.ToLower()) == true)
+                    if (cat.Name.ToLower().Contains("tags") == true | cat.Name.ToLower().Contains(SelectedCategory.Name.ToLower()) == true)
                     {
                         ids.Add(cat.Id);
                     }
@@ -242,11 +242,11 @@ internal partial class NumberViewModel : BaseViewModel
                 {
                     t.Start();
 
-                    var selectionFilter = new CategorySelectionFilter(_selectedCategory.Name);
+                    var selectionFilter = new CategorySelectionFilter(SelectedCategory.Name);
 
                     var elem = App.RevitDocument.GetElement(_selection.PickObject(ObjectType.Element, selectionFilter));
 
-                    if (_supressDuplicateMarkValues == true)
+                    if (SupressDuplicateMarkValues == true)
                     {
                         var failOpt = t.GetFailureHandlingOptions();
                         failOpt.SetFailuresPreprocessor(new WarningSwallower());
@@ -255,17 +255,17 @@ internal partial class NumberViewModel : BaseViewModel
 
 
                     // Get the Parameter
-                    Parameter parameter = elem.GetParameter(_selectedParameter.Definition.Name);
+                    Parameter parameter = elem.GetParameter(SelectedParameter.Definition.Name);
 
-                    parameter.Set($"{_prefix}{_formattedNumberString}{_suffix}");
+                    parameter.Set($"{Prefix}{_formattedNumberString}{Suffix}");
 
-                    if (_colourPickedElements == true)
+                    if (ColourPickedElements == true)
                     {
                         App.RevitDocument.ActiveView.SetElementOverrides(elem.Id, ogs);
                         elems.Add(elem);
                     }
 
-                    _number++;
+                    Number++;
 
                     t.Commit();
                 }
@@ -278,12 +278,12 @@ internal partial class NumberViewModel : BaseViewModel
             {
                 t.Start();
 
-                if (_isolateModelCategoryInView == true)
+                if (IsolateModelCategoryInView == true)
                 {
                     App.RevitDocument.ActiveView.DisableTemporaryViewMode(TemporaryViewMode.TemporaryHideIsolate);
                 }
 
-                if (_colourPickedElements == true)
+                if (ColourPickedElements == true)
                 {
                     foreach (var e in elems)
                         App.RevitDocument.ActiveView.SetElementOverrides(e.Id, ogsClear);

@@ -15,8 +15,6 @@ class App : IExternalApplication
     public static UIApplication CachedUiApp;
     public static Autodesk.Revit.DB.Document RevitDocument;
 
-    private readonly string _tabName = "RG Tools";
-
     public Result OnShutdown(UIControlledApplication application)
     {
         return Result.Succeeded;
@@ -27,36 +25,39 @@ class App : IExternalApplication
         CachedUiCtrApp = application;
         var ribbonPanel = CreateRibbonPanel();
 
-        Syncfusion.Licensing.SyncfusionLicenseProvider
-            .RegisterLicense("##SyncfusionLicense##");
-
         return Result.Succeeded;
     }
 
     private RibbonPanel CreateRibbonPanel()
     {
-        try
-        {
-            CachedUiCtrApp.CreateRibbonTab(_tabName);
-        }
-        catch { }
-
-        RibbonPanel panel = CachedUiCtrApp.CreateRibbonPanel(_tabName, Guid.NewGuid().ToString());
+        RibbonPanel panel = CachedUiCtrApp.CreateRibbonPanel(nameof(Number));
         panel.Title = "Number";
 
-        PushButtonData pbDataNumber = new PushButtonData("Number", $"Number{Environment.NewLine}Objects", Assembly.GetExecutingAssembly().Location, "Number.cmdNumber");
-        PushButton pbNumber = (PushButton)panel.AddItem(pbDataNumber);
-        pbNumber.ToolTip = "Number items in order by clicking on them in turn. Esc to finish.";
-        pbNumber.LargeImage = PngImageSource("Number.Images.Number32.png");
+        PushButtonData pushButtonDataNumber = new PushButtonData(
+            nameof(Number.Commands.CommandNumber), 
+            $"Number{Environment.NewLine}Objects", 
+            Assembly.GetExecutingAssembly().Location,
+            $"{nameof(Number)}.{nameof(Number.Commands)}.{nameof(Number.Commands.CommandNumber)}");
+        pushButtonDataNumber.AvailabilityClassName = $"{nameof(Number)}.{nameof(Number.Controllers)}.{nameof(Number.Controllers.CommandAvailabilityActiveModelView)}";
 
-        PushButtonData pbDataNumberText = new PushButtonData("NumberText", $"Number{Environment.NewLine}Text", Assembly.GetExecutingAssembly().Location, "Number.cmdNumberText");
-        PushButton pbNumberText  = (PushButton)panel.AddItem(pbDataNumberText);
-        pbNumberText.ToolTip = "Number text strings in order by clicking on them in turn. Esc to finish.";
-        pbNumberText.LargeImage = PngImageSource("Number.Images.NumberText32.png");
+        PushButton pushButtonNumber = (PushButton)panel.AddItem(pushButtonDataNumber);
+        pushButtonNumber.ToolTip = "Number items in order by clicking on them in turn. Esc to finish.";
+        pushButtonNumber.LargeImage = PngImageSource("Number.Images.Number32.png");
+
+        PushButtonData pushButtonDataNumberText = new PushButtonData(
+            nameof(Number.Commands.CommandNumberText), 
+            $"Number{Environment.NewLine}Text", 
+            Assembly.GetExecutingAssembly().Location,
+        $"{nameof(Number)}.{nameof(Number.Commands)}.{nameof(Number.Commands.CommandNumberText)}");
+        pushButtonDataNumberText.AvailabilityClassName = $"{nameof(Number)}.{nameof(Number.Controllers)}.{nameof(Number.Controllers.CommandAvailabilityActiveModelView)}";
+
+        PushButton pushButtonNumberText  = (PushButton)panel.AddItem(pushButtonDataNumberText);
+        pushButtonNumberText.ToolTip = "Number text strings in order by clicking on them in turn. Esc to finish.";
+        pushButtonNumberText.LargeImage = PngImageSource("Number.Images.NumberText32.png");
 
         ContextualHelp contextHelp = new ContextualHelp(ContextualHelpType.Url, @"https://github.com/russgreen/Number");
-        pbNumber.SetContextualHelp(contextHelp);
-        pbNumberText.SetContextualHelp(contextHelp);     
+        pushButtonNumber.SetContextualHelp(contextHelp);
+        pushButtonNumberText.SetContextualHelp(contextHelp);     
 
         return panel;
     }
