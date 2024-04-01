@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="20.3.2" version="20.6" Modules="simple" RootPath="." Language="en_GB" Id="{E5BDCFF4-329E-490B-A30F-4CB7BF4CE04A}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.3.2" version="21.4" Modules="simple" RootPath="." Language="en_GB" Id="{E5BDCFF4-329E-490B-A30F-4CB7BF4CE04A}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
   </COMPONENT>
@@ -9,10 +9,10 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="Number2.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Russell Green"/>
-    <ROW Property="ProductCode" Value="2057:{23A33840-8EC8-437D-9CEF-52859D18212A} " Type="16"/>
+    <ROW Property="ProductCode" Value="2057:{49CD317E-534B-416D-A0DE-CFD627F40D7D} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Number"/>
-    <ROW Property="ProductVersion" Value="2.6"/>
+    <ROW Property="ProductVersion" Value="2.7" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{EFD9DC1B-D977-42E4-9DF2-E03D867C2013}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -23,6 +23,8 @@
     <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
@@ -33,6 +35,7 @@
     <ROW Directory="Number_2_Dir" Directory_Parent="__2_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_3_Dir" Directory_Parent="__3_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_4_Dir" Directory_Parent="__4_Dir" DefaultDir="Number"/>
+    <ROW Directory="Number_5_Dir" Directory_Parent="__5_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_Dir" Directory_Parent="__Dir" DefaultDir="Number"/>
     <ROW Directory="Revit_Dir" Directory_Parent="Autodesk_Dir" DefaultDir="Revit"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
@@ -40,17 +43,20 @@
     <ROW Directory="__2_Dir" Directory_Parent="Addins_Dir" DefaultDir="2022"/>
     <ROW Directory="__3_Dir" Directory_Parent="Addins_Dir" DefaultDir="2023"/>
     <ROW Directory="__4_Dir" Directory_Parent="Addins_Dir" DefaultDir="2024"/>
+    <ROW Directory="__5_Dir" Directory_Parent="Addins_Dir" DefaultDir="2025"/>
     <ROW Directory="__Dir" Directory_Parent="Addins_Dir" DefaultDir="2020"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{3E797424-7EEE-4EB4-93FB-5A493E8A57AE}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="CommunityToolkit.Mvvm.dll" ComponentId="{B65B345B-A85E-4544-B6CC-41DA52878B7D}" Directory_="Number_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_1" ComponentId="{B74433E5-59D7-41C9-B61A-78DFCAAFDA7E}" Directory_="Number_1_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_1"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll_2" ComponentId="{D6FBB1A3-2752-4F91-AED9-F7B7D6926AF2}" Directory_="Number_5_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_2"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_4" ComponentId="{D2E0346D-D39E-4733-9832-4A5E860C0961}" Directory_="Number_4_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_4"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_5" ComponentId="{C6DA0F06-4461-4205-B053-51885E7E26B7}" Directory_="Number_2_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_5"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_6" ComponentId="{C421C5DE-D37F-4DF6-8036-2907C293684C}" Directory_="Number_3_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_6"/>
     <ROW Component="JetBrains.Annotations.dll" ComponentId="{F7079CAA-F27F-45F0-A8E7-DB0DCB6C9CBC}" Directory_="Number_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll"/>
     <ROW Component="JetBrains.Annotations.dll_1" ComponentId="{D96F4E83-E759-47DF-8D25-FAAB9F55AD85}" Directory_="Number_1_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_1"/>
+    <ROW Component="JetBrains.Annotations.dll_2" ComponentId="{0A6D03A7-AF60-4A7A-8233-2158903E511F}" Directory_="Number_5_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_2"/>
     <ROW Component="JetBrains.Annotations.dll_4" ComponentId="{2CC0A4E7-5291-4285-BDBE-DBF2A081F5E9}" Directory_="Number_4_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_4"/>
     <ROW Component="JetBrains.Annotations.dll_5" ComponentId="{7E9CD0B5-98DF-445C-B0D9-5EDB82BAA226}" Directory_="Number_2_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_5"/>
     <ROW Component="JetBrains.Annotations.dll_6" ComponentId="{C430A891-BB77-4BF5-BDEB-C4274D7B3026}" Directory_="Number_3_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_6"/>
@@ -61,11 +67,13 @@
     <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll_6" ComponentId="{3CCB03D9-3709-4952-9C01-2E340042A6D7}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll_6"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{E22B2EE1-93A9-47E1-A5FC-9E9FAF84DD7F}" Directory_="Number_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_1" ComponentId="{C21FD0C5-D5D9-4B46-BD05-2F691BBDB4F4}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_1"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll_2" ComponentId="{B22EDC13-15BC-436E-923C-0AF0F4DB6266}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_2"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_4" ComponentId="{49C15AD5-540B-42F9-B065-45B36B2EC6DD}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_4"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_5" ComponentId="{670E3A66-71D1-4B61-9D7B-B4A007F2A8DE}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_5"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_6" ComponentId="{2A826FA6-87B0-4988-A226-E2C9B3998A1E}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_6"/>
     <ROW Component="Nice3point.Revit.Extensions.dll" ComponentId="{1FBA9FCA-BC42-41D5-A468-9ED22D279F2A}" Directory_="Number_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_1" ComponentId="{48543414-2121-4E00-89C4-30F723B10EB5}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_1"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll_2" ComponentId="{36AD7C65-8829-403F-AEF2-1B3A28032CA4}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_2"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_4" ComponentId="{43458B93-4D60-4CAD-8D31-2FDDFB151179}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_4"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_5" ComponentId="{31D01BE2-AE90-4CB3-9A06-E6DDC9B0BA1C}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_5"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_6" ComponentId="{F82AC17D-11D3-4234-8F06-6499250B9EDF}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_6"/>
@@ -74,8 +82,11 @@
     <ROW Component="Number.addin_2" ComponentId="{BADBE03F-4E86-420F-B0A5-556ABC33C1A9}" Directory_="__2_Dir" Attributes="0" KeyPath="Number.addin_2" Type="0"/>
     <ROW Component="Number.addin_3" ComponentId="{76DBCED4-1597-41FC-9902-169380975618}" Directory_="__3_Dir" Attributes="0" KeyPath="Number.addin_3" Type="0"/>
     <ROW Component="Number.addin_4" ComponentId="{18CECF0F-6813-43CB-AC18-E49DDDD98B68}" Directory_="__4_Dir" Attributes="0" KeyPath="Number.addin_4" Type="0"/>
+    <ROW Component="Number.addin_5" ComponentId="{3B372899-ED99-4ECC-8172-5657E7A5DA97}" Directory_="__5_Dir" Attributes="0" KeyPath="Number.addin_5" Type="0"/>
+    <ROW Component="Number.deps.json" ComponentId="{54D399D0-5BB0-4649-B318-68A10E61FBF7}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Number.deps.json" Type="0"/>
     <ROW Component="Number.dll" ComponentId="{4806E015-E9FF-4517-B45D-B2420A59929C}" Directory_="Number_Dir" Attributes="256" KeyPath="Number.dll"/>
     <ROW Component="Number.dll_1" ComponentId="{714B7586-F25C-481C-9CEC-5539599EE646}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Number.dll_1"/>
+    <ROW Component="Number.dll_2" ComponentId="{7B5C0A5A-D348-4B59-AD7C-96AED36C2145}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Number.dll_2"/>
     <ROW Component="Number.dll_4" ComponentId="{5476B58D-4004-404E-87EC-993882C12817}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Number.dll_4"/>
     <ROW Component="Number.dll_5" ComponentId="{B7BEDEA8-D631-44BC-AC90-3BB2484B94EF}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Number.dll_5"/>
     <ROW Component="Number.dll_6" ComponentId="{8CAA10A8-0C83-4F89-A2FC-2B92F1A14FFF}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Number.dll_6"/>
@@ -205,9 +216,20 @@
     <ROW File="System.Runtime.CompilerServices.Unsafe.dll_6" Component_="System.Runtime.CompilerServices.Unsafe.dll_6" FileName="SYSTEM~5.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
     <ROW File="System.Threading.Tasks.Extensions.dll_6" Component_="System.Threading.Tasks.Extensions.dll_6" FileName="SYSTEM~6.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
     <ROW File="CommunityToolkit.Mvvm.dll_6" Component_="CommunityToolkit.Mvvm.dll_6" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R23\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Number.addin_5" Component_="Number.addin_5" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
+    <ROW File="CommunityToolkit.Mvvm.dll_2" Component_="CommunityToolkit.Mvvm.dll_2" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll_2" Component_="JetBrains.Annotations.dll_2" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll_2" Component_="Microsoft.Xaml.Behaviors.dll_2" FileName="MICROS~1.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll_2" Component_="Nice3point.Revit.Extensions.dll_2" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="Number.deps.json" Component_="Number.deps.json" FileName="NUMBER~1.JSO|Number.deps.json" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Number.deps.json" SelfReg="false"/>
+    <ROW File="Number.dll_2" Component_="Number.dll_2" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Number.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="249"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="251"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFileName="Number_v[|ProductVersion]" Languages="en_GB" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
@@ -231,8 +253,14 @@
     <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="1"/>
@@ -260,12 +288,21 @@
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
@@ -354,6 +391,13 @@
     <ROW Feature_="MainFeature" Component_="System.Threading.Overlapped.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Extensions.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Xml.XPath.XDocument.dll"/>
+    <ROW Feature_="MainFeature" Component_="Number.addin_5"/>
+    <ROW Feature_="MainFeature" Component_="CommunityToolkit.Mvvm.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="Number.deps.json"/>
+    <ROW Feature_="MainFeature" Component_="Number.dll_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Number2.exe" SourcePath="..\Number2.ico" Index="0"/>
@@ -365,6 +409,15 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
@@ -372,11 +425,14 @@
     <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
     <ROW Action="AI_DpiContentScale" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] can not be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] can not be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 600)" Description="[ProductName] cannot be installed on [WindowsTypeNT60Display]." DescriptionLocId="AI.LaunchCondition.NoNT60" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="VersionNT" Description="[ProductName] can not be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">

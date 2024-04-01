@@ -129,7 +129,7 @@
 
         <Button Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"
                 Content="Pick families to (re)number"
-                Command="{Binding Nu}"
+                Command="{Binding NumberObjectsCommand}"
                 IsEnabled="{Binding HasErrors,  Converter={StaticResource InverseBooleanConverter}}"/>
                 <!--IsEnabled="{Binding NumberEnabled}"/>-->
 
