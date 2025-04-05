@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="20.3.2" version="21.4" Modules="simple" RootPath="." Language="en_GB" Id="{E5BDCFF4-329E-490B-A30F-4CB7BF4CE04A}">
-  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
-  </COMPONENT>
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.3.2" version="22.2" Modules="simple" RootPath="." Language="en_GB" Id="{E5BDCFF4-329E-490B-A30F-4CB7BF4CE04A}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="Number2.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Russell Green"/>
-    <ROW Property="ProductCode" Value="2057:{49CD317E-534B-416D-A0DE-CFD627F40D7D} " Type="16"/>
+    <ROW Property="ProductCode" Value="2057:{C3807032-32EE-4FBE-AF28-ACAD4F76A045} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Number"/>
-    <ROW Property="ProductVersion" Value="2.7" Options="32"/>
+    <ROW Property="ProductVersion" Value="2.8" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{EFD9DC1B-D977-42E4-9DF2-E03D867C2013}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -31,11 +28,13 @@
     <ROW Directory="Addins_Dir" Directory_Parent="Revit_Dir" DefaultDir="Addins"/>
     <ROW Directory="Autodesk_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="Autodesk"/>
     <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="NewFolder_Dir" Directory_Parent="Addins_Dir" DefaultDir="2026"/>
     <ROW Directory="Number_1_Dir" Directory_Parent="__1_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_2_Dir" Directory_Parent="__2_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_3_Dir" Directory_Parent="__3_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_4_Dir" Directory_Parent="__4_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_5_Dir" Directory_Parent="__5_Dir" DefaultDir="Number"/>
+    <ROW Directory="Number_6_Dir" Directory_Parent="NewFolder_Dir" DefaultDir="Number"/>
     <ROW Directory="Number_Dir" Directory_Parent="__Dir" DefaultDir="Number"/>
     <ROW Directory="Revit_Dir" Directory_Parent="Autodesk_Dir" DefaultDir="Revit"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
@@ -51,12 +50,14 @@
     <ROW Component="CommunityToolkit.Mvvm.dll" ComponentId="{B65B345B-A85E-4544-B6CC-41DA52878B7D}" Directory_="Number_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_1" ComponentId="{B74433E5-59D7-41C9-B61A-78DFCAAFDA7E}" Directory_="Number_1_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_1"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_2" ComponentId="{D6FBB1A3-2752-4F91-AED9-F7B7D6926AF2}" Directory_="Number_5_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_2"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll_3" ComponentId="{BBEE9C0C-8488-4AE9-B397-FAAA5E47608C}" Directory_="Number_6_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_3"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_4" ComponentId="{D2E0346D-D39E-4733-9832-4A5E860C0961}" Directory_="Number_4_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_4"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_5" ComponentId="{C6DA0F06-4461-4205-B053-51885E7E26B7}" Directory_="Number_2_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_5"/>
     <ROW Component="CommunityToolkit.Mvvm.dll_6" ComponentId="{C421C5DE-D37F-4DF6-8036-2907C293684C}" Directory_="Number_3_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll_6"/>
     <ROW Component="JetBrains.Annotations.dll" ComponentId="{F7079CAA-F27F-45F0-A8E7-DB0DCB6C9CBC}" Directory_="Number_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll"/>
     <ROW Component="JetBrains.Annotations.dll_1" ComponentId="{D96F4E83-E759-47DF-8D25-FAAB9F55AD85}" Directory_="Number_1_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_1"/>
     <ROW Component="JetBrains.Annotations.dll_2" ComponentId="{0A6D03A7-AF60-4A7A-8233-2158903E511F}" Directory_="Number_5_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_2"/>
+    <ROW Component="JetBrains.Annotations.dll_3" ComponentId="{F05EC9A4-3479-45A2-A125-D27567825AFC}" Directory_="Number_6_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_3"/>
     <ROW Component="JetBrains.Annotations.dll_4" ComponentId="{2CC0A4E7-5291-4285-BDBE-DBF2A081F5E9}" Directory_="Number_4_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_4"/>
     <ROW Component="JetBrains.Annotations.dll_5" ComponentId="{7E9CD0B5-98DF-445C-B0D9-5EDB82BAA226}" Directory_="Number_2_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_5"/>
     <ROW Component="JetBrains.Annotations.dll_6" ComponentId="{C430A891-BB77-4BF5-BDEB-C4274D7B3026}" Directory_="Number_3_Dir" Attributes="0" KeyPath="JetBrains.Annotations.dll_6"/>
@@ -68,12 +69,14 @@
     <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{E22B2EE1-93A9-47E1-A5FC-9E9FAF84DD7F}" Directory_="Number_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_1" ComponentId="{C21FD0C5-D5D9-4B46-BD05-2F691BBDB4F4}" Directory_="Number_1_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_1"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_2" ComponentId="{B22EDC13-15BC-436E-923C-0AF0F4DB6266}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_2"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll_3" ComponentId="{F68B2EB7-EC3E-4C9D-848B-C233B3144009}" Directory_="Number_6_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_3"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_4" ComponentId="{49C15AD5-540B-42F9-B065-45B36B2EC6DD}" Directory_="Number_4_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_4"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_5" ComponentId="{670E3A66-71D1-4B61-9D7B-B4A007F2A8DE}" Directory_="Number_2_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_5"/>
     <ROW Component="Microsoft.Xaml.Behaviors.dll_6" ComponentId="{2A826FA6-87B0-4988-A226-E2C9B3998A1E}" Directory_="Number_3_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll_6"/>
     <ROW Component="Nice3point.Revit.Extensions.dll" ComponentId="{1FBA9FCA-BC42-41D5-A468-9ED22D279F2A}" Directory_="Number_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_1" ComponentId="{48543414-2121-4E00-89C4-30F723B10EB5}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_1"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_2" ComponentId="{36AD7C65-8829-403F-AEF2-1B3A28032CA4}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_2"/>
+    <ROW Component="Nice3point.Revit.Extensions.dll_3" ComponentId="{84766EE8-A88D-4C5C-A81F-B12AF32BCB2D}" Directory_="Number_6_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_3"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_4" ComponentId="{43458B93-4D60-4CAD-8D31-2FDDFB151179}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_4"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_5" ComponentId="{31D01BE2-AE90-4CB3-9A06-E6DDC9B0BA1C}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_5"/>
     <ROW Component="Nice3point.Revit.Extensions.dll_6" ComponentId="{F82AC17D-11D3-4234-8F06-6499250B9EDF}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Nice3point.Revit.Extensions.dll_6"/>
@@ -83,10 +86,13 @@
     <ROW Component="Number.addin_3" ComponentId="{76DBCED4-1597-41FC-9902-169380975618}" Directory_="__3_Dir" Attributes="0" KeyPath="Number.addin_3" Type="0"/>
     <ROW Component="Number.addin_4" ComponentId="{18CECF0F-6813-43CB-AC18-E49DDDD98B68}" Directory_="__4_Dir" Attributes="0" KeyPath="Number.addin_4" Type="0"/>
     <ROW Component="Number.addin_5" ComponentId="{3B372899-ED99-4ECC-8172-5657E7A5DA97}" Directory_="__5_Dir" Attributes="0" KeyPath="Number.addin_5" Type="0"/>
+    <ROW Component="Number.addin_6" ComponentId="{94A5480D-EC18-455A-9905-3B5C09A2873C}" Directory_="NewFolder_Dir" Attributes="0" KeyPath="Number.addin_6" Type="0"/>
     <ROW Component="Number.deps.json" ComponentId="{54D399D0-5BB0-4649-B318-68A10E61FBF7}" Directory_="Number_5_Dir" Attributes="0" KeyPath="Number.deps.json" Type="0"/>
+    <ROW Component="Number.deps.json_1" ComponentId="{45D3A562-06C0-4980-A47B-AFFE2FD64331}" Directory_="Number_6_Dir" Attributes="0" KeyPath="Number.deps.json_1" Type="0"/>
     <ROW Component="Number.dll" ComponentId="{4806E015-E9FF-4517-B45D-B2420A59929C}" Directory_="Number_Dir" Attributes="256" KeyPath="Number.dll"/>
     <ROW Component="Number.dll_1" ComponentId="{714B7586-F25C-481C-9CEC-5539599EE646}" Directory_="Number_1_Dir" Attributes="256" KeyPath="Number.dll_1"/>
     <ROW Component="Number.dll_2" ComponentId="{7B5C0A5A-D348-4B59-AD7C-96AED36C2145}" Directory_="Number_5_Dir" Attributes="256" KeyPath="Number.dll_2"/>
+    <ROW Component="Number.dll_3" ComponentId="{E0B28BE8-512E-4DBF-8254-600342C3F221}" Directory_="Number_6_Dir" Attributes="256" KeyPath="Number.dll_3"/>
     <ROW Component="Number.dll_4" ComponentId="{5476B58D-4004-404E-87EC-993882C12817}" Directory_="Number_4_Dir" Attributes="256" KeyPath="Number.dll_4"/>
     <ROW Component="Number.dll_5" ComponentId="{B7BEDEA8-D631-44BC-AC90-3BB2484B94EF}" Directory_="Number_2_Dir" Attributes="256" KeyPath="Number.dll_5"/>
     <ROW Component="Number.dll_6" ComponentId="{8CAA10A8-0C83-4F89-A2FC-2B92F1A14FFF}" Directory_="Number_3_Dir" Attributes="256" KeyPath="Number.dll_6"/>
@@ -223,6 +229,13 @@
     <ROW File="Nice3point.Revit.Extensions.dll_2" Component_="Nice3point.Revit.Extensions.dll_2" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
     <ROW File="Number.deps.json" Component_="Number.deps.json" FileName="NUMBER~1.JSO|Number.deps.json" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Number.deps.json" SelfReg="false"/>
     <ROW File="Number.dll_2" Component_="Number.dll_2" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R25\Number.dll" SelfReg="false"/>
+    <ROW File="CommunityToolkit.Mvvm.dll_3" Component_="CommunityToolkit.Mvvm.dll_3" FileName="COMMUN~1.DLL|CommunityToolkit.Mvvm.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R26\CommunityToolkit.Mvvm.dll" SelfReg="false"/>
+    <ROW File="JetBrains.Annotations.dll_3" Component_="JetBrains.Annotations.dll_3" FileName="JETBRA~1.DLL|JetBrains.Annotations.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R26\JetBrains.Annotations.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll_3" Component_="Microsoft.Xaml.Behaviors.dll_3" FileName="MICROS~1.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R26\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Nice3point.Revit.Extensions.dll_3" Component_="Nice3point.Revit.Extensions.dll_3" FileName="NICE3P~1.DLL|Nice3point.Revit.Extensions.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R26\Nice3point.Revit.Extensions.dll" SelfReg="false"/>
+    <ROW File="Number.deps.json_1" Component_="Number.deps.json_1" FileName="NUMBER~1.JSO|Number.deps.json" Attributes="0" SourcePath="..\Number\bin\x64\Release R26\Number.deps.json" SelfReg="false"/>
+    <ROW File="Number.dll_3" Component_="Number.dll_3" FileName="Number.dll" Attributes="0" SourcePath="..\Number\bin\x64\Release R26\Number.dll" SelfReg="false"/>
+    <ROW File="Number.addin_6" Component_="Number.addin_6" FileName="NUMBER~1.ADD|Number.addin" Attributes="0" SourcePath="..\Number\Number.addin" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -398,6 +411,13 @@
     <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_2"/>
     <ROW Feature_="MainFeature" Component_="Number.deps.json"/>
     <ROW Feature_="MainFeature" Component_="Number.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="CommunityToolkit.Mvvm.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="JetBrains.Annotations.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Xaml.Behaviors.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Nice3point.Revit.Extensions.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Number.deps.json_1"/>
+    <ROW Feature_="MainFeature" Component_="Number.dll_3"/>
+    <ROW Feature_="MainFeature" Component_="Number.addin_6"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Number2.exe" SourcePath="..\Number2.ico" Index="0"/>
