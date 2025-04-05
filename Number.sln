@@ -23,12 +23,14 @@ Global
 		Debug 2023|x64 = Debug 2023|x64
 		Debug 2024|x64 = Debug 2024|x64
 		Debug 2025|x64 = Debug 2025|x64
+		Debug 2026|x64 = Debug 2026|x64
 		Release 2020|x64 = Release 2020|x64
 		Release 2021|x64 = Release 2021|x64
 		Release 2022|x64 = Release 2022|x64
 		Release 2023|x64 = Release 2023|x64
 		Release 2024|x64 = Release 2024|x64
 		Release 2025|x64 = Release 2025|x64
+		Release 2026|x64 = Release 2026|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Debug 2020|x64.ActiveCfg = Debug R20|x64
@@ -43,6 +45,8 @@ Global
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Debug 2024|x64.Build.0 = Debug R24|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Debug 2025|x64.ActiveCfg = Debug R25|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Debug 2025|x64.Build.0 = Debug R25|x64
+		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Debug 2026|x64.ActiveCfg = Debug R26|x64
+		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Debug 2026|x64.Build.0 = Debug R26|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2020|x64.ActiveCfg = Release R20|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2020|x64.Build.0 = Release R20|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2021|x64.ActiveCfg = Release R21|x64
@@ -55,18 +59,22 @@ Global
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2024|x64.Build.0 = Release R24|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2025|x64.ActiveCfg = Release R25|x64
 		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2025|x64.Build.0 = Release R25|x64
+		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2026|x64.ActiveCfg = Release R26|x64
+		{E648FC3C-C7DD-4466-A459-C7AAC00C0337}.Release 2026|x64.Build.0 = Release R26|x64
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2020|x64.ActiveCfg = Debug|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2021|x64.ActiveCfg = Debug|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2022|x64.ActiveCfg = Debug|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2023|x64.ActiveCfg = Debug|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2024|x64.ActiveCfg = Debug|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2025|x64.ActiveCfg = Debug|Any CPU
+		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Debug 2026|x64.ActiveCfg = Debug|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2020|x64.ActiveCfg = Release|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2021|x64.ActiveCfg = Release|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2022|x64.ActiveCfg = Release|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2023|x64.ActiveCfg = Release|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2024|x64.ActiveCfg = Release|Any CPU
 		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2025|x64.ActiveCfg = Release|Any CPU
+		{2101FEC8-8E9F-490C-9B7B-D82F0392321F}.Release 2026|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
