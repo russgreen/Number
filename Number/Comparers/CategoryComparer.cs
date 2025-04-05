@@ -13,6 +13,10 @@ internal class CategoryComparer : IEqualityComparer<Category>
 
     public int GetHashCode(Category obj)
     {
+#if REVIT2025_OR_GREATER
+        return (int)obj.Id.Value;
+#else
         return obj.Id.IntegerValue;
+#endif
     }
 }
