@@ -255,7 +255,7 @@ internal partial class NumberViewModel : BaseViewModel
 
 
                     // Get the Parameter
-                    Parameter parameter = elem.GetParameter(SelectedParameter.Definition.Name);
+                    Parameter parameter = elem.FindParameter(SelectedParameter.Definition.Name);
 
                     parameter.Set($"{Prefix}{_formattedNumberString}{Suffix}");
 
@@ -294,7 +294,7 @@ internal partial class NumberViewModel : BaseViewModel
         }
 
         // Return Result.Cancelled
-        catch (Exception ex)
+        catch 
         {
             //return Result.Failed;
         }
