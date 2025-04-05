@@ -97,7 +97,7 @@
 
   <ItemGroup>
 	<PackageReference Include="CommunityToolkit.Mvvm" Version="8.*" />
-	<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+	<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Api.RevitAPIUI" Version="$(RevitVersion).*" />
 	<PackageReference Include="Nice3point.Revit.Extensions" Version="$(RevitVersion).*" />
