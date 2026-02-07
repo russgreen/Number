@@ -272,7 +272,7 @@ internal partial class NumberViewModel : BaseViewModel
                 while (true);
             }
         }
-        catch (Autodesk.Revit.Exceptions.OperationCanceledException generatedExceptionName)
+        catch (Autodesk.Revit.Exceptions.OperationCanceledException)
         {
             using (var t = new Transaction(App.RevitDocument, "End Temp View"))
             {
