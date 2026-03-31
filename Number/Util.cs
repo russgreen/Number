@@ -30,8 +30,7 @@ public static class Util
     }
 
     /// <summary>
-    /// Return a string for a real number
-    /// formatted to two decimal places.
+    /// Return a string for a real number formatted to two decimal places.
     /// </summary>
     public static string RealString(double a)
     {
@@ -40,29 +39,25 @@ public static class Util
 
     public static List<Category> GetCategoriesInActiveView()
     {
-        // select all elements in the active view
-        var allInView = new FilteredElementCollector(
-            App.RevitDocument,
-            App.RevitDocument.ActiveView.Id);
+        var categories = App.RevitDocument.CollectElements(App.RevitDocument.ActiveView)
+            .WhereElementIsNotElementType()
+            .ToElements()
+            .Select(x => x.Category)
+            .Distinct(new CategoryComparer())
+            .Where(x => x != null)
+            .OrderBy(x => x.Name)
+            .ToList();
 
-        allInView.WhereElementIsNotElementType();
 
-        //get distinct categories of elements in the active view
-        var categories = allInView
-                            .ToElements()
-                            .Select(x => x.Category)
-                            .Distinct(new CategoryComparer())
-                            .Where(x => x != null)
-                            .OrderBy(x => x.Name)
-                            .ToList();
-
-        return categories.ToList();
+        return categories;
     }
 
     public static List<Parameter> GetInstanceParametersByCategoryInActiveView(ElementId catID)
     {
-        var instances = App.RevitDocument
-            .GetInstances(App.RevitDocument.ActiveView.Id, new ElementCategoryFilter(catID));
+        var instances = App.RevitDocument.CollectElements(App.RevitDocument.ActiveView.Id)
+            .Instances()
+            .OfCategoryId(catID)
+            .ToList();
 
         // get the instance parameters of the family instances
         var instanceParameters = new List<Parameter>();
